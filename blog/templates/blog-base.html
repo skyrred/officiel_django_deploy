@@ -1,0 +1,403 @@
+<!doctype html>
+<head>
+<meta name="viewport" width="device-width, initial-scale=1.0">
+<meta name="author" content="Skyteam">
+<meta name="description" content="this site give you all that you need" >
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+<title>{%block title%}
+{%endblock%}
+ </title>
+
+<style>
+.logo{
+    height:13.6em;
+    text-align: center;
+    margin-top:-40px;
+    background: #670b0a;
+}
+.gallery-text{
+    width:90%;
+    background:rgba(0, 0, 0, 0.68);
+    border-radius: 10px;
+    padding:20px;
+    float:left;
+    margin-left:5%;
+    margin-bottom: 10px;
+    
+}
+.order{
+    background:black;
+    color:white;
+    border-radius:10px;
+    font-family:sans-serif Arial;
+    font-size: 100%;
+    padding:5px;
+    width:15%;
+}
+.order a{
+    text-decoration: none;
+}
+.gallery{
+    width:50%;
+    background:rgba(0, 0, 0, 0.7);
+    padding:10px 5px 5px 30px;
+    border-radius: 15px;
+}
+.gallery div img{
+    border-radius:15px;
+    margin:5px;
+    width:27%;
+}
+.gallery div{
+    margin-left:-10px;
+}
+.gallery div img:hover {
+    border:3px white solid;
+    cursor: pointer;
+}
+.item-content{
+    width:95%;
+   /* background: rgba(0, 0, 0, 0.68);*/
+    margin-left:35px;
+}
+/*.gallery div img {
+    margin-left:10px;
+    border-radius:20px;
+    width:100%;
+    cursor: pointer;
+}
+.gallery div img:hover{
+    background: white;
+    border:3px solid white;
+}
+.gallery img:hover{
+    cursor: pointer;
+    border:5px white solid;
+}*/
+
+.item-info{
+    float:right;
+    background:#9a846a;
+    width:48%;
+    padding:10px;
+    border-radius: 10px;
+}
+.item-info h3{
+    color:#9a846a;
+}
+.item-info p{
+    color:#4e0202;
+    font-size: 20px;
+}
+.gallery div {
+    /*background:rgba(255, 255, 255, 0.59);*/
+    padding:10px;
+    border-radius:30px;
+    width:47%;
+    margin-left:20px;
+}
+.shop-content{
+    display: block;
+    float: right;
+    width: 96%;
+    border-radius: 5px;
+    margin-right:30px;
+    vertical-align:middle;
+    background:rgba(0, 0, 0, 0.82);
+    clear: both;
+}
+.pres{
+    background:rgba(0, 0, 0, 0.79);
+    height: 300px;
+    width:90%;
+}
+.pres-pics{
+    background:rgba(0, 0, 0, 0.69);
+    padding: 5px;
+    width:85%;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+.pres-pics img{
+    margin:5px;
+    margin-right: 20px;
+    border-radius: 10px;
+    
+}
+.textt{
+    color:white;
+    text-align: center;
+    margin-right:15px;
+    padding: 20px;
+    width:80%;
+    font-family: sans-serif , Arial , Italic;
+}
+.shop-header{
+    color:white;
+    background: darkred;
+    width:80%;
+    border: 3px solid white;
+    border-radius: 15px;
+}
+.info{
+    width:30%;
+    border:3px darkred solid;
+    border-radius:10px;
+    margin-right: -50em;
+    background: white;
+    float:left;
+    display: block;
+    background: rgb(37, 37, 37);
+    margin:0px;
+    padding:10px;
+    margin:15px;
+}
+.shop-title{
+    background: rgb(113, 3, 3);
+    color: wheat;
+    text-align: center;
+    border-radius: 7px;
+    padding: 5px;
+    width: 100%;
+    
+}
+.shop-image{
+    width:90%;
+    height:15em;
+}
+.shop-article{
+    border-top: 3px solid #a70202;
+    color: white;
+    padding: 5px;
+    background: rgb(36, 32, 27);
+    border-radius: 5px;
+    
+}
+.posts{
+    width:68%;
+    margin-left: 15px;
+}
+.post-title{
+    background: white;
+    text-align: left;
+    color: #480100;
+    border-top:3px solid darkred;
+    font-family: sans-serif,Arial,Italic;
+    width:100%;
+    padding: 8px;
+    border-radius: 3px;
+}
+.post-head{
+    background:#5f0a09;
+    text-align: center;
+    color: white;
+    font-family: sans-serif,Arial,bold;
+    padding-right: 0%;
+}
+.logoo{
+    width:38em;
+    height:23em;
+    margin: -70px -250px 0 -150px;
+    float:left;
+    top:10em;
+    padding:0px;
+    padding-right: -20px;
+}
+.spn{
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.29);
+    border-radius: 10px;
+    padding: 10px;
+}
+.txt{
+    padding: 15px 0 0 15px;
+    margin:15px 0 0 0;
+    color:azure;
+    font-family: bold, Arial, sans-serif;
+    /*width:40%;*/
+    
+}
+.txt1{
+    font-family: sans-serif , helvetica ,bold;
+    padding:15px 0 0 15px;
+    color:beige;
+    /*width:30%;*/
+}
+#a {
+    float:right;
+    
+}
+.sidebar{
+  background-color: white;
+  width:30%;
+  float:right;
+  margin-right: 2px;
+  border-radius: 2px;
+  padding: 10px;
+  border-left:1px solid gray;
+}
+.allposts{
+    float:left;
+    width:66%;
+    margin-left: 15px;
+}
+.container {
+    overflow: hidden;
+    background-color: #670b0a;
+    font-family: Arial;
+    float:right;
+    position: relative;
+    color:#c6b097;
+    
+}
+.body{
+    background-color: beige;
+    display: inline-block;
+}
+
+.container a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown  {
+    float: left;
+    overflow: hidden;
+    color:#c6b097;
+}
+
+.dropdown .dropbtn   {
+    cursor: pointer;
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.container a:hover, .dropdown:hover .dropbtn {
+    /*background-color: #403f3f;*/
+    border-bottom: 3px solid white;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color:#7B0606  ;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: darkred;
+}
+
+.show {
+    display: block;
+}
+</style>
+    <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+function myFunction1() {
+    document.getElementById("myDropdown1").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown1");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+  var count = 0;
+  function changedate(){
+    var dt = new Date();
+    var day = dt.getDate();
+    var month = dt.getMonth();
+    var year = dt.getFullYear();
+    var hour = dt.getHours();
+    var minute = dt.getMinutes();
+    var second = dt.getSeconds();
+    document.getElementById("date").innerHTML = day+"/"+month+"/"+year;
+    document.getElementById("time").innerHTML = hour +":"+minute+":"+second;
+  }
+setInterval(changedate,1000);
+</script>
+
+</head>
+<html>
+<body style="background-color: white;">
+<div class="container">
+  <a href="http://www.skyteam.herokuapp.com">Home</a>
+  <a href="/blog">Blog</a>
+  <a href="http://www.skyteamwork.cf/forum">Forum</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">Skyteam info</button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="/about">About</a>
+      <a href="https://www.fiverr.com/skyred525/do-you-python-django-scripts-for-web-apps">My Gig</a>
+      <a href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ">Youtube</a>
+    </div>
+  </div> 
+</div>
+<br>
+    <div class="logo" style="">
+        <img class="logoo" src="https://i.imgur.com/jkpx1Wj.png" alt="check skyteam.com">
+        <h1 class="txt"><span class="spn"> Welcome to skyteam </span></h1>
+        <h3 class="txt1"><span class="spn">Everything you need</span></h3>
+        <br>
+        <form action="http://www.skyteam.herokuapp.com/search/" method="get"  >
+    <input type="text" placeholder ="Search ..." name="search" class="w3-contain" style="width:20%;border-radius: 3px;padding:7px;background: rgba(0, 0, 0, 0.29); color:white;border:1px solid darkred;">
+    <input type="submit" value="submit" style="background:#b23d3c ; color:white;border-radius: 5px;padding-right:40px;padding-bottom: 5px;cursor: pointer;">
+    <img src="https://i.imgur.com/5i1vy6v.png" style="position:absolute;margin:5px 0 0 -40px;cursor: pointer;">
+    
+    </form>
+    </div>
+    <br>
+<center>
+<div style="width: 90%;background-color: white;">
+  {%block content%}
+  {%endblock%}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+ <!--blog/main -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4694231391944648"
+     data-ad-slot="3597684726"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</center>

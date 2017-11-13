@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block content%}
+<center>
+<div class="w3-contain w3-border w3-round" style="width:75%;background-color: #006064;">
+	<form action="result/" method="post">{% csrf_token %}
+		<h3 style="color:#F8BBD0;margin:15px">Name <input class="w3-contain w3-border w3-round-xlarge" style = "padding:10px;width:25%;height:35px; background-color:#FCE4EC;margin:15px;" type="text" name="name" ></h3>
+		<h3 style="color:#F8BBD0;margin:15px;text-align: left;margin-left: 80px; ">About (error or a point of vue) <input class="w3-contain w3-border w3-round-xlarge" style = "padding:10px;width:25%;height:35px; background-color:#FCE4EC;margin:15px;" type="text" name="about"></h3>
+    <h3 style="color:#F8BBD0;">Your message  <br> <textarea class="w3-border w3-round-xlarge  " style = "margin:15px; background-color: #FCE4EC;width:70%;height:200px;" type="password" name="description"></textarea></h3>
+		<center><input class="w3-contain w3-round-xlarge
+    w3-border" style="background-color:#FCE4EC;color:#6A1B9A;font-size:20px;padding:20px;width:200px;" type="submit" value="submit" name="submit"></center>
+	</form>
+</div></center>
+<!--<div class="footer">
+	<a href="www.skyteam.tk"><h5 style="color:#AB47BC;">Home</h5></a>
+	<a href="#"><h5 style="color:#AB47BC;">About Us</h5></a>
+	<a href="www.facebook.com/ahmed.jabnati.7"><h5 style="color:#AB47BC;">to contact us : </h5></a>
+	<h4 style="position: left bottom;">Created by Skyteam</h4>
+</div>-->
+{%endblock%}
+
+
+

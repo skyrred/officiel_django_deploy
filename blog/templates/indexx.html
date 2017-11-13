@@ -1,0 +1,579 @@
+<!doctype html>
+<head>
+<meta name="viewport" width="device-width, initial-scale=1.0">
+<meta name="author" content="Skyteam">
+<meta charset="utf-8">
+<meta name="description" content="this site give you all that you need" >
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<style>
+.logo{
+    height:13.6em;
+    width:100%;
+    text-align: center;
+    margin-top:-40px;
+    background: #7B0606;
+}
+.posts{
+    width:60%;
+    margin-left: 15px;
+}
+body,html{
+    height:100%;
+    width:100%;
+    margin:0;
+    padding: 0;
+}
+.banner{
+    background-image: url("https://i.imgur.com/s410TOr.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:100%;
+}
+.transparent {
+    font-size: 3.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.25);
+    color:white;
+    letter-spacing: 5px;
+    font-family: bold, Arial, sans-serif;
+  background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    width:100%;
+    margin:-25px;
+}
+.secondbut button{
+    background:transparent;
+    border:3px solid white;
+    border-radius: 25px;
+    color:white;
+    padding:20px;
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+    width:180px;
+}
+.secondbut button:hover{
+    color:#db2824;
+    border:3px solid #db2824;
+    text-decoration: underline;
+}
+.mainbut{
+    background:transparent;
+    border:3px solid white;
+    border-radius: 25px;
+    color:white;
+    padding:20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.mainbut:hover{
+    color:#db2824;
+    border:3px solid #db2824;
+    text-decoration: underline;
+}
+.transparent1 {
+    font-size: 3em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.25);
+    color:/*darkslategray*/#db2824;
+    font-family: bold, Arial, sans-serif;
+  background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3px 10px 10px 10px;
+    margin-top: 3px;
+}
+#text-back{
+    width:100%;
+    height: 100%;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    float:left;
+}
+#btn-anim{
+    border-radius: 20px;
+    width:200px;
+    height: 100px;
+    background:#db2824;
+    color:white;
+    font-size: 25px;
+    border:none;
+    cursor: pointer;
+    margin:10px;
+}
+#btn-anim:hover{
+    animation-name: button;
+    animation-duration: 5s;
+}
+@keyframes button{
+    0% {background-color:transparent;}
+    25%{border-top:3px solid white;}
+    50%{border-right: 3px solid white;}
+    75%{border-bottom: 3px solid white;}
+    100%{border-left:3px solid white;}
+}
+.text-back-info{
+    background:rgb(41, 0, 0) ;
+    background-size:cover;
+    height:100%;
+    display: inline-block;
+}
+#ytb-image{
+    width:50%;
+    height:300px;
+}
+.presentation{
+    width:100%;
+    background: rgb(41, 0, 0);
+    padding-left :15px;
+    padding-right:15px;
+    margin: 0px;
+}
+.presentation img{
+    border-radius: 50%;
+    width:15%;
+    height:15%;
+    background-attachment: fixed;
+    cursor: pointer;
+    margin: 0px;
+    
+}
+.presentation img:hover{
+    border:3px solid white;
+    
+}
+.presentation p{
+    margin-bottom: 0px;
+    font-size: 24px;
+    color:white;
+}
+#email{
+    color:darkred;
+    font-family: serif,Arial;
+}
+
+.post-title{
+    background: #7B0606;
+    text-align: left;
+    color: bisque;
+    font-family: sans-serif,Arial,Italic;
+    width:100%;
+    padding-left: 8px;
+}
+.post-head{
+    background: #7B0606;
+    text-align: center;
+    color: bisque;
+    font-family: sans-serif,Arial,Bold;
+    padding-right: 25%;
+}
+.logoo{
+    width:38em;
+    height:23em;
+    margin: -70px -250px 0 -150px;
+    float:left;
+    top:10em;
+    padding:0px;
+    padding-right: -20px;
+}
+.buttn{
+    border:none;
+    margin:10px;
+}
+.hypp{
+    text-decoration: none;
+}
+.hypp:hover{
+    text-decoration: underline ;
+}
+.buttn:hover{
+    border-bottom: 2px solid #db2824;
+    border-bottom-width:thick; 
+    border-spacing: 20px;
+}
+.spn{
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.29);
+    border-radius: 10px;
+    padding: 10px;
+}
+.txt{
+    padding: 15px 0 0 15px;
+    margin:15px 0 0 0;
+    color:azure;
+    font-family: bold, Arial, sans-serif;
+    /*width:40%;*/
+    
+}
+.txt1{
+    font-family: sans-serif , helvetica ,bold;
+    padding:15px 0 0 15px;
+    color:beige;
+    /*width:30%;*/
+}
+#a {
+    float:right;
+    
+}
+.allposts{
+    float:left;
+    width:60%;
+    margin-left: 15px;
+}
+.container {
+    overflow: hidden;
+    background-color: /*#7B0606;*/transparent;
+    font-family: Arial;
+    float:right;
+    position: relative;
+    color:#c6b097;
+    
+}
+.body{
+    background-color: beige;
+    display: inline-block;
+}
+
+.container a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown  {
+    float: left;
+    overflow: hidden;
+    color:#c6b097;
+}
+
+.dropdown .dropbtn   {
+    cursor: pointer;
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.container a:hover,.dropdown:hover  .dropbtn {
+   /* background-color: darkred;*/
+    border-bottom: 3px solid #db2824;
+    color : #db2824;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    /*background-color:#7B0606  ;*/
+    background:transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: transparent;
+}
+
+.show {
+    display: block;
+}</style>
+<title> Skyteam website</title>
+    
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59395dcd4672462f"> 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+function myFunction1() {
+    document.getElementById("myDropdown1").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown1");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+  var count = 0;
+  function changedate(){
+    var dt = new Date();
+    var day = dt.getDate();
+    var month = dt.getMonth();
+    var year = dt.getFullYear();
+    var hour = dt.getHours();
+    var minute = dt.getMinutes();
+    var second = dt.getSeconds();
+    document.getElementById("date").innerHTML = day+"/"+month+"/"+year;
+    document.getElementById("time").innerHTML = hour +":"+minute+":"+second;
+  }
+setInterval(changedate,1000);
+</script>
+</head>
+<html>
+<body style="background-color:lightgray;">
+<!--<div class="container">
+  <a href="http://127.0.0.1:8000">Home</a>
+  <a href="/blog">Blog</a>
+  <a href="http://www.skyteamwork.cf/forum">Forum</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">Skyteam info</button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="/about">About</a>
+      <a href="/send">contact</a>
+      <a href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ">Youtube</a>
+    </div>
+  </div> 
+</div>
+<br>
+    <div class="logo" style="">
+        <img class="logoo" src="https://i.imgur.com/s410TOr.jpg" alt="check skyteam.com">
+        <h1 class="txt"><span class="spn"> Welcome to skyteam </span></h1>
+        <h3 class="txt1"><span class="spn">Everything you need</span></h3>
+    </div>-->
+    <div class="banner">
+        <div class="container">
+  <a href="http://www.skyteam.herokuapp.com">Home</a>
+  <a href="/blog">Blog</a>
+  <a href="http://www.skyteamwork.cf/forum">Forum</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">Skyteam info</button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="/about">About</a>
+      <a href="https://www.fiverr.com/skyred525/do-you-python-django-scripts-for-web-apps">My Gig</a>
+      <a href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ">Youtube</a>
+    </div>
+  </div> 
+</div>
+        <br>
+        <center>
+            <div style="margin-top: 200px;">
+	<!--<h2 class ="txt w3-container">--><h1 class="transparent"> WELCOME TO SKYTEAM</h1> <!--</h2>--> <br> <!--<h3 class="txt1 w3-container">--> <h1 class="transparent1">EVERYTHING YOU NEED</h1> </div>
+            <br>
+            <br>
+        <button id="testy" class="mainbut" onclick="move()">Start Now</button>
+        </center>
+        <!--</h3>-->
+        <br>
+        <center>
+        <div class="secondbut" style="display: inline-block;width:100%;">
+            <button style="float:left;margin-right: 40px;" id="testy1"  onclick="move1()">Shop(soon)</button>
+            <button style="float:left;margin-left:20px;" id="testy2"  onclick="move2()">Forum</button>
+            <button style="float:right;margin-left:20px;" id="testy3"  onclick="move3()">Youtube</button>
+            <button style="float:right;margin-right:40px;" id="testy4"  onclick="move4()">Contact</button>
+        </div></center>
+</div>
+<script>
+    function testblock(){
+        document.getElementById("testy").style.display="block";
+    }
+    setInterval(testblock,3000);
+    function move(){
+        var e = document.getElementById("blog");
+        e.scrollIntoView();
+    }
+    function move1(){
+        var e = document.getElementById("shop");
+        e.scrollIntoView();
+    }
+    function move2(){
+        var e = document.getElementById("forum");
+        e.scrollIntoView();
+    }
+    function move3(){
+        var e = document.getElementById("youtube");
+        e.scrollIntoView();
+    }
+    function move4(){
+        var e = document.getElementById("contact");
+        e.scrollIntoView();
+    }
+    </script>
+    
+    <div id="youtube" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
+    <div style="width:100%;float:left;">
+    <center>
+    <h1  style="font-family: sans-serif,Arial;color: #db2824;">Visit our youtube Channel</h1></center>
+        <div class="text-back-info">
+        <h3 id="text-back" style="padding:10px;color:white;">There you can find more videos about many subjects cracking games/software , news about anything sports,tech and for sure many tutorials , I will try for sure to share everything I know with you there .</h3></div></div>
+        <center>
+        <img id="ytb-image" src="https://i.imgur.com/FtoUOXt.jpg" style="height: 300px;"></center>
+        <center>
+        <button id="btn-anim" style="" onclick=""><a style="text-decoration: none;" href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ">to see more</a></button></center>
+        </div>
+    <div id="blog" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
+    <div style="width:100%;float:left;margin-top: 0px;">
+    <center>
+    <h1  style="font-family: sans-serif,Arial;color: #db2824;"><a style="text-decoration: none;" href="/blog">Visit our Blog</a></h1></center>
+        <h3 style="color:white;padding: 10px;">There you can find more videos about many subjects cracking games/software , news about anything sports,tech and for sure many tutorials , I will try for sure to share everything I know with you there .</h3></div>
+        <div style="width:100%;display:block;clear:both:vertical-align:center;margin-left:1%;">
+        {%for post in posts%}
+            <article class="w3-contain " style="width:20%;float:right;cursor:pointer;margin-right: 4.5%; ">
+            <h3 style="background:rgba(219, 40, 36, 0.5);color:white;position: absolute;width:20%;margin-top:-1px;"><a style="text-decoration: none;" href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
+                <img class="hov" src="{{post.url}}" style="width:100%;height: 200px;">
+            </article>
+        {%endfor%}
+            
+            <!--<article class="w3-contain " style="width:20%;float:right;cursor:pointer;margin-right: 4.5%; ">
+            <h3 style="background:rgba(219, 40, 36, 0.5);color:white;position: absolute;width:20%;margin-top:-1px;">Your title</h3>
+                <img class="hov" src="bags.jpg" style="width:100%;height: 200px;">
+            </article>
+                
+            <article class="w3-contain" style="width:20%;float:right;cursor:pointer;margin-right: 4.5%; ">
+            <h3 style="background:rgba(219, 40, 36, 0.5);color:white;position: absolute;width:20%;margin-top:-1px;">Your title</h3>
+                <img class="hov" src="pic.png" style="width:100%;height: 200px;">
+            </article>
+                    
+            <article class="w3-contain " style="width:20%;float:right;cursor:pointer;margin-right: 4.5%; ">
+            <h3 style="background:rgba(219, 40, 36, 0.5);color:white;position: absolute;width:20%;margin-top:-1px;">Your title</h3>
+                <img class="hov" src="132235.jpg" style="width:100%;height: 200px;">
+            </article>
+            <center>
+            <button id="btn-anim" style="" onclick=""><a style="text-decoration: none;" href="/blog">to see more</a></button></center>
+            <div style="width:23%;border:3px solid #db2824;height: 300px;">
+            <h1 style="height: 30%;background:rgb(41, 0, 0);">Title here</h1>
+                <img src="132235.jpg" style="width:100%;height: 70%;">
+            </div>
+            <div style="width:23%;border:3px solid #db2824;height: 300px;">
+            <h1 style="height: 30%;background:rgb(41, 0, 0);">Title here</h1>
+                <img src="132235.jpg" style="width:100%;height: 70%;">
+            </div>
+            <div style="width:23%;border:3px solid #db2824;height: 300px;">
+            <h1 style="height: 30%;background:rgb(41, 0, 0);">Title here</h1>
+                <img src="132235.jpg" style="width:100%;height: 70%;">
+            </div>-->
+             </div></div>
+            
+        
+        
+        <div id="forum" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
+    <div style="width:100%;float:left;">
+    <center>
+    <h1 style="font-family: sans-serif,Arial;color: #db2824;">Join our Discussion Forum</h1></center>
+        <h3 style="padding:10px;color:white;">There you can find more people to talk with , express your idea , give us your feedback your point of vue and also talking about what would you like us to talk about how we can improve ourselves etc... simply you can say whatever you want and you are free to share anything you want .</h3></div>
+        <img src="https://i.imgur.com/a2xvn4x.jpg" style="width:100%;height: 300px;">
+            <center>
+            <button id="btn-anim" style="" onclick=""><a style="text-decoration: none;" href="http://www.skyteamwork.cf/forum/">to see more</a></button></center>
+        </div>
+    
+    
+         <!--<div id="shop" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
+    <div style="width:100%;float:left;margin-top: 0px;">
+    <center>
+    <h1 style="font-family: sans-serif,Arial;color: #db2824;">Visit our Online Shop</h1></center>
+        <h3 style="color:white;">There you can find more videos about many subjects cracking games/software , news about anything sports,tech and for sure many tutorials , I will try for sure to share everything I know with you there .</h3></div>
+        <div style="width:100%;display:block;clear:both:vertical-align:center;margin:0px 10px 0px 10px;">
+            <article class="w3-contain " style="width:20%;float:left;cursor:pointer;margin:0px 33x 0px 22px;">
+            <h3 style="background:rgba(219, 40, 36, 0.5);color:white;position: absolute;width:20%;margin-top:-1px;">health and fitness </h3>
+                <img class="hov" src="https://i.imgur.com/rGRRLo3.jpg" style="width:100%;height: 200px;">
+            </article>
+            
+            <article class="w3-contain " style="width:20%;float:right;cursor:pointer;margin:0px 33px 0px 22px;">
+            <h3 style="background:rgba(219, 40, 36, 0.5);color:white;position: absolute;width:20%;margin-top:-1px;">software and technologie</h3>
+                <img class="hov" src="https://i.imgur.com/0LdS3LD.jpg" style="width:100%;height: 200px;">
+            </article>
+                
+            <article class="w3-contain" style="width:20%;float:right;cursor:pointer;margin:0px 33px 0px 22px;">
+            <h3 style="background:rgba(219, 40, 36, 0.5);color:white;position: absolute;width:20%;margin-top:-1px;">Cloths and beauty</h3>
+                <img class="hov" src="https://i.imgur.com/cZ8miqR.jpg" style="width:100%;height: 200px;">
+            </article>
+                    
+            <article class="w3-contain " style="width:20%;float:right;cursor:pointer;margin:0px 33px 0px 22px;">
+            <h3 style="background:rgba(219, 40, 36, 0.5);color:white;position: absolute;width:20%;margin-top:-1px;">Knowledge and culture</h3>
+                <img class="hov" src="https://i.imgur.com/lW2TBoA.jpg" style="width:100%;height: 200px;">
+            </article>
+            <center>
+            <button style="width:200px;height: 100px;background:#db2824;color:white;font-size: 25px;border:none;cursor: pointer;margin:10px;" onclick=""><a style="text-decoration: none;" href="/blog">to see more</a></button></center>
+            <!--<div style="width:23%;border:3px solid #db2824;height: 300px;">
+            <h1 style="height: 30%;background:rgb(41, 0, 0);">Title here</h1>
+                <img src="132235.jpg" style="width:100%;height: 70%;">
+            </div>
+            <div style="width:23%;border:3px solid #db2824;height: 300px;">
+            <h1 style="height: 30%;background:rgb(41, 0, 0);">Title here</h1>
+                <img src="132235.jpg" style="width:100%;height: 70%;">
+            </div>
+            <div style="width:23%;border:3px solid #db2824;height: 300px;">
+            <h1 style="height: 30%;background:rgb(41, 0, 0);">Title here</h1>
+                <img src="132235.jpg" style="width:100%;height: 70%;">
+</div>
+             </div></div>-->
+    <div class="presentation" >
+        <center>
+        <img src="https://i.imgur.com/70opJMp.jpg" >
+        <img src="https://i.imgur.com/GAFNMwk.png"></center>
+        <p>This is me Ahmed.I'm a programer and Django web developer who like finding solutions for real life problems help with creating new things and even make life better .I'm working with python I love to make web apps using django or desktop apps . I'm very interested in technologie and I intend to share my things with you and I'm looking forward to help you or even work with you .You can contact me below this or by my email <h9 id="email">sky.red2212@gmail.com</h9></p>
+        <center>
+        <h2 style="color:#db2824;font-family: serif,Arial;">Want to build a website ?</h2>
+        <p>if you are looking to build a website for a very nice price who can do multi function taches and even hundle some advanced functions or looking to make your dream real show the world what you want to do or you are tired of doing things manually and you feel like wasting time then you are in the right place contact me and we can work on some projects I can make your dream apps real help you getting to write your first line of code (if you are looking to learn) or build an app for you to make your taches easier for this you can contact me in my email <h9 id="email">sky.red2212@gmail.com</h9> or check out my gig below </p>
+        <center>
+            <button id="btn-anim" style="" onclick=""><a style="text-decoration: none;" href="https://www.fiverr.com/skyred525/do-you-python-django-scripts-for-web-apps">to see more</a></button></center>
+    </div>
+        <div id="contact" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
+    <div style="width:100%;float:left;background:rgb(41, 0, 0);">
+    <center>
+    <h1 style="font-family: sans-serif,Arial;color: #db2824;">Contact Us</h1></center>
+        <center>
+        <form action="/send/result/" method="POST">{% csrf_token %}
+            <input style="border-radius:3px;width:25%;padding:3px;" type="text" name="name" placeholder="Your name ...">
+            <input style="border-radius:3px;width:25%;padding:3px;" type="email" name="email" placeholder="your email ...">
+            <br>
+            <textarea style="margin:15px 0px 15px 0px;width: 60%;border-radius:3px;padding: 5px;height: 8em;" type="text" name="description" placeholder="your message ..." ></textarea>
+            <br>
+            <input style="height:75px;padding-left: 25px;padding-right:25px;cursor:pointer; border:none;background:#db2824;color:white;margin:10px;font-size:25px;" type="submit" value="submit" name="submit">
+        </form></center>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog/main -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4694231391944648"
+     data-ad-slot="3597684726"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </div></div>
+    
+        <div class="foot" style="width:100%;background:rgba(0, 0, 0, 0.82);border-bottom:1px solid white;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+            <center>
+            <div>
+                <button class="buttn" style="background: transparent;padding:20px;width:20%;" onclick=""><a style="text-decoration: none;color:#db2824;" href="/blog"><h4>Blog</h4></a></button>
+                <button class="buttn" style="background: transparent;padding:20px;width:20%;" onclick=""><a style="text-decoration: none;color:#db2824;" href="."><h4>Shop(soon)</h4></a></button></div>
+                <div>
+                <button class="buttn" style="background: transparent;padding:20px;width:20%;" onclick=""><a style="text-decoration: none;color:#db2824;" href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ"><h4>youtube</h4></a></button>
+                <button class="buttn" style="background: transparent;padding:20px;width:20%;" onclick=""><a style="text-decoration: none;color:#db2824;" href="http://www.skyteamwork.cf/forum/"><h4>Forum</h4></a></button></div>
+                <h4 style="color:#db2824;"> This site is created by Skyteam <br> All rights reserved to <a class="hypp" style="color:grey;" href=".">@skyteam</a></h4>
+                
+            </center>
+            
+            
+            </div>
+    </body></html>

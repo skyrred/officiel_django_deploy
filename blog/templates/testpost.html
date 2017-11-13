@@ -1,0 +1,85 @@
+{% extends 'blog-base.html' %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+<!--<div class="posts">
+    <h1 class="post-head " > {{post.title}}</h1>
+    <div id="a"  class="dropdown" style="background: #7B0606;position:absolute;margin-top:-64px;">
+    <button  class="dropbtn" onclick="myFunction1()">Filter category</button>
+    <div class="dropdown-content" id="myDropdown1">
+      <a href="http://127.0.0.1:8000/blog">All posts</a>
+      <a href="http://127.0.0.1:8000/news">New posts</a>
+        {%for categorys in category%}
+      <a href="{{categorys.get_absolute_url}}">{{categorys.name}}</a>
+        {%endfor%}
+    </div>
+  </div>  
+    </div>-->
+    <div style="float:left;width:55%;margin-right: 0%;margin-left: -10%">
+    <div style="width:120%;">
+    	<h1 class="post-head"> {{post.title}}</h1>
+
+    
+    	<img src="{{post.url}}" width="50%" height="50%">
+    	{{post.content|safe}}
+    </div>
+    	</div></center>
+<div class="sidebar">
+<center>
+<div id="subbg" class="w3-contain   " style="background-color: white;width:90%;height:30%;border-top:3px #5f0a09 solid;padding: 10px;border-radius: 1px;	">
+	<form action="http://127.0.0.1:8000/subscribe/" method="post">{% csrf_token %}
+	 <h3 style="padding-left: 15px;color:#5f0a09;">Name <input class="w3-contain w3-white  " style="border:darkred solid 1px;width:80%;padding: 5px;" type="text" name="name"></h3>
+	 <h3 style="padding-left: 15px;color:#5f0a09;">Email  <input class="w3-contain w3-white  " style="border:darkred solid 1px;width:80%;padding: 5px;margin-left: 7px;" type="text" name="email"> </h3>
+	 <center>
+	 <input id="subbtn" class="w3-contain  w3-color-green w3-border-orange w3-round-xlarge" style="width: 150px;color:white;font-size: 25px;background-color: #5f0a09;cursor: pointer;margin-left: 15px;" type="submit" name="submit" value="subscribe"></center>
+	 <h5 style="color:white;margin-bottom: -5px;">Current Subs : {{num}}</h5>
+	
+	</form>
+	</div>
+	<br>
+<div class="w3-contain " style="background-color: rgba(0, 0, 0, 0.44);width:90%;border-radius: 1px;padding: 10px;border-top:3px solid #5f0a09;">
+	<h3 style="text-align: center;color:white;">Want to buy something</h3>
+	<h3 style="text-align: center;color:orange;">Check Our Store</h3>
+	<center>
+		<button style="background-color: /*#5f0a09*/white;border:2px solid darkgray;color:black;border-radius: 4px;font-size:1.1em;font-family:sans-serif , Arial , bold;"><a href="http://127.0.0.1:8000/shop" style="text-decoration: none;">Go to shop</a></button>
+	</center>
+</div>
+
+<div style="border-top:3px solid #5f0a09;padding: 10px;width:90%;">
+<center>
+	<form action="http://127.0.0.1:8000/search" method="GET"  >{% csrf_token %}
+    <input type="text" placeholder ="Search ..." name="search" class="w3-contain" style="width:90%;border-radius: 3px;padding:7px;background: rgba(0, 0, 0, 0.29); color:white;border:1px solid darkred;">
+    <br>
+    <input type="submit" value="submit" style="background:#5f0a09 ; color:white;border-radius: 5px;padding-right:40px;padding-bottom: 5px;cursor: pointer;">
+    <img src="https://i.imgur.com/5i1vy6v.png" style="position:absolute;margin:0px 0px 0px -40px;cursor: pointer;">
+    
+    </form>
+    </center>
+</div>
+</center>
+</div>
+	<div style="float:left;width: 60%;border-top:3px solid darkred;margin-top: 15px;padding-left: 20px;">
+	{%for commentt in comment%}
+	<div style="border-bottom: 1px solid gray;">
+		<h3 style="color:darkred;font-size: 30px;" >{{commentt.name}}</h3>
+		<h4 style="color:darkgray;font-size:23px;margin-left: 2%; " > {{commentt.email}}</h4>
+		<p style="color:orange;font-size: 26px;margin-left: 4%;">
+		 {{commentt.desc}}</p>
+	</div>
+	{%endfor%}
+
+
+
+
+	<div style="margin-bottom: 15px;" >
+	<form action={{post.get_absolute_url}} method="post">{% csrf_token %}
+		<h3 > <input  placeholder=" Your name ..." type="text" name="name" ></h3>
+		<h3 > <input  placeholder=" Your email ..." type="text" name="email"></h3>
+    <h3 > <textarea style="width:80%;" placeholder=" Your comment ..."  type="text" name="comment"></textarea></h3>
+		<center><input style="background-color: white;color:orange;border:2px solid gray;cursor: pointer;padding: 10px;border-radius: 5px;margin-right: 15%;"  type="submit" value="Add comment" name="submit"></center>
+	</form>
+	</div>
+	</div>
+
+{%endblock%}

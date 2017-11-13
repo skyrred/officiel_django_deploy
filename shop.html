@@ -1,0 +1,14 @@
+{%include base.html%}
+{%block content%}
+<div class="shop-content">
+    {%for article in articles%}
+    <article class="w3-contain info">
+        <h1 class="w3-contain shop-title"><a href="{{article.get_absolute_url}}">
+            This a test article
+         </a></h1>
+        <center>
+        <img src="{{article.url}}" class="shop-image"></center>
+        <p class="shop-article">{{article.description}}</p>
+    </article>
+    </div>
+{%end block%}

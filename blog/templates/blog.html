@@ -1,0 +1,208 @@
+{% extends 'blog-base.html' %}
+
+
+{% block title %} Skyteam Blog {% endblock %}
+
+{% block content %}
+
+<!--<h1 id="titleg" class="w3-contain w3-border w3-round-xlarge  " style="color:white;font-size:60px;background-color:#024237;border:5px solid white;width: 65%;text-align: center;	 "> My Blog Archive </h1>
+
+
+
+
+<div  style="width:65%;float:left;margin-left: 5px;" >
+	<div style="float:right;width:46%;">
+	{% for post in posts %}
+		<div id="postbg1" class="w3-border w3-round-xlarge" style="float:right;clear:right;width:100%;text-align: center;height:470px;background-color: #056b5a;margin:10px;">
+
+			<h2 id="ptitle1" class="w3-contain   w3-border w3-round-xlarge" style="color:white;background-color:#024237;width:100%;padding-top: 20px;margin-top: 0px;">
+			<a href="{{post.get_absolute_url}}">
+			{{post.title}}
+			</a>
+			</h2>	
+			<center>
+			<img src="{{post.url}}" style="margin:auto;width:200px;height:100px;">
+			</center>
+			<p style="color:white;text-align: left;margin:10px;font-family: Helvetica, sans-serif;">{{post.description}}</p>
+		
+			<h3 id="timebg1" class="w3-contain" style="float: right;color:white;background-color: #004D40;width:100%;">
+			Posted on
+			<time datetime="{{post.created|date:'c'}}">
+			{{post.created|date}}
+			</time>
+			</h3>
+			
+			</div><br>
+	{% endfor %}
+	</div>
+	<div style="float:left;width:46%;">
+	{% for post in posts2%}
+		<div id="postbg2" class="w3-border w3-round-xlarge" style="clear:left;width:100%;text-align: center;height:470px;background-color: #056b5a;margin-right: 20px;margin-top: 7px;">
+			<h2 id="ptitle2" class="w3-contain   w3-border w3-round-xlarge" style="color:white;background-color:#024237;width:100%;padding-top: 20px;margin-top: 0px;"><a href="{{post.get_absolute_url}}">
+			{{post.title}}</a></h2>
+			<center>
+			<img src="{{post.url}}" style="margin:auto;width:200px;height:100px;">
+			</center>
+			<p style="color:white;text-align: left;margin: 10px;"> {{post.description}}</p>
+			<h3 id="timebg2" class="w3-contain" style="float: right;color:white;background-color: #004D40;width:100%;">
+
+			post on 
+			<time  datetime="{{post2.created|date:'c'}}">
+			{{post.created|date}}
+			</time>
+			</h3>
+			</div><br>
+	{%endfor%}
+	</div>
+</div>
+
+<div  style="float:right;">
+	<center>
+	<div class="w3-contain" style="width:200px;margin:25px;" >
+	
+		<button class="w3-contain w3-border" style="width: 100px;background-color: white;color:darkgray;float:right;border-radius: 5px;cursor: pointer;" id="but" onclick="red()">Click me</button>
+		<button class="w3-contain w3-border" style="width: 100px;background-color:#004D40;color:white; float:left;border-radius: 5px;cursor: pointer; " id="but1" onclick="green()">Click me</button>
+
+	</div></center>
+	<br>
+	<br>
+	<div id="datebg" class="w3-contain w3-border " style="background-color: #056b5a;border-radius: 20px;width:430px;">
+		<h1 style="color:white;text-align: center;"> Date : </h1>
+		<h1 id="date" style="color:white;text-align: center;"></h1>
+		<h3 id="time" style="color:white;text-align: center;"></h3>
+	</div><br>
+	<div id="subbg" class="w3-contain w3-border  " style="background-color: #056b5a;width: 430px;height:240px;border:10px black solid;padding: 10px;border-radius: 20px;margin-right: 20px;	">
+	<form action="http://127.0.0.1:8000/subscribe/" method="post">{% csrf_token %}
+	 <h3 style="padding-left: 15px;color:white;">Name <input class="w3-contain w3-white w3-border w3-round-xlarge" style="padding: 5px;" type="text" name="name"></h3>
+	 <h3 style="padding-left: 15px;color:white;">Email  <input class="w3-contain w3-white w3-border w3-round-xlarge" style="padding: 5px;margin-left: 7px;" type="text" name="email"> </h3>
+	 <center>
+	 <input id="subbtn" class="w3-contain  w3-color-green w3-border-orange w3-round-xlarge" style="width: 150px;color:white;font-size: 25px;background-color: #024237;" type="submit" name="submit" value="subscribe"></center>
+	 <h5 style="color:white;float:right;">Current Subs : {{num}}</h5>
+	
+	</form>
+	</div>
+	<br>
+	<div id="catbg" class="w3-contain w3-border " style="background-color: #056b5a;border-radius: 20px;width:430px;">
+		<h2 id="cattitlebg" class="w3-contain ;" style="text-align: center;color:white;background-color: #024237;border-radius: 15px;">Categories</h2>
+    	{% if category %}
+        <ul>
+        	<li style="color:white;"><a href="http://127.0.0.1:8000/blog">All Posts </a></li>
+        	<li  style="color:white;"><a href="http://127.0.0.1:8000/news">New Posts </a></li>
+            {% for categorys in category%}
+            <li style="color:white;"><a href="{{ categorys.get_absolute_url }}">{{ categorys.name }}</a></li>
+        {% endfor %}
+        </ul>
+    	{% else %}
+        <p>There are no posts.</p>
+    	{% endif %}
+	</div>
+</div>-->
+
+<div class="posts">
+    <h1 class="post-head " > Our Blog posts</h1>
+    <div id="a"  class="dropdown" style="background: #5f0a09;position:absolute;margin-top:-64px;">
+    <button  class="dropbtn" onclick="myFunction1()">Filter category</button>
+    <div class="dropdown-content" id="myDropdown1">
+      <a href="http://127.0.0.1:8000/blog">All posts</a>
+      <a href="http://127.0.0.1:8000/news">New posts</a>
+        {%for categorys in category%}
+      <a href="{{categorys.get_absolute_url}}">{{categorys.name}}</a>
+        {%endfor%}
+    </div>
+  </div>  
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog/main -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4694231391944648"
+     data-ad-slot="3597684726"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="allposts">
+	{% for post in posts %}
+    <div style="width:100%;float: left;margin:2px;">
+    <div>
+    <h1 class="post-title"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h1>
+        <a href="{{post.get_absolute_url}}"><img style="width:30%;height: 15em;border-radius: 3px;float:left;" src="{{post.url}}" ></a>
+            <p style="margin:10px 0px 10px 0px;font-size: 1.6em;color:black;font-family: sans-serif,Tahoma;float:right;width: 68%;text-align: left;">{{post.description}}</p>
+        <h3  style="float:right;color:gray;padding: 10px;">
+			Posted on
+			<time datetime="{{post.created|date:'c'}}">
+			{{post.created|date}}
+			</time>
+			</h3>
+    <!--<p style="float:right;color:darkred;padding: 10px;">posted on october 2017</p>-->
+    <br>
+    </div>
+    <br>
+    
+</div>
+{%endfor%}
+</div>
+<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+ blog/main 
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4694231391944648"
+     data-ad-slot="3597684726"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>-->
+<div class="sidebar">
+<center>
+<div id="subbg" class="w3-contain   " style="background-color: white;width:90%;height:30%;border-top:3px #5f0a09 solid;padding: 10px;border-radius: 1px;	">
+	<form action="/subscribe/" method="post">{% csrf_token %}
+	 <h3 style="padding-left: 15px;color:#5f0a09;">Name <input class="w3-contain w3-white  " style="border:darkred solid 1px;width:80%;padding: 5px;" type="text" name="name"></h3>
+	 <h3 style="padding-left: 15px;color:#5f0a09;">Email  <input class="w3-contain w3-white  " style="border:darkred solid 1px;width:80%;padding: 5px;margin-left: 7px;" type="text" name="email"> </h3>
+	 <center>
+	 <input id="subbtn" class="w3-contain  w3-color-green w3-border-orange w3-round-xlarge" style="width: 150px;color:white;font-size: 25px;background-color: #5f0a09;cursor: pointer;margin-left: 15px;" type="submit" name="submit" value="subscribe"></center>
+	 <h5 style="color:gray;margin-bottom: -5px;">Current Subs : {{num}}</h5>
+	
+	</form>
+	</div>
+	<br>
+	<div class="w3-contain " style="background-color: rgb(103, 11, 10);width:90%;border-radius: 1px;padding: 10px;border-top:3px solid #5f0a09;">
+	<h3 style="text-align: center;color:white;">Want to Build a website</h3>
+	<h3 style="text-align: center;color:orange;">Check My Gig</h3>
+	<center>
+		<button style="background-color:#490807 /*#5f0a09*/;border:2px solid gray;color:white;border-radius: 4px;font-size:1.3em;font-family:sans-serif , Arial , bold;"><a href="https://www.fiverr.com/skyred525/do-you-python-django-scripts-for-web-apps" style="text-decoration: none;">Check it out</a></button>
+	</center>
+</div>
+	<br>
+<div class="w3-contain " style="background-color: rgb(103, 11, 10);width:90%;border-radius: 1px;padding: 10px;border-top:3px solid #5f0a09;">
+	<h3 style="text-align: center;color:white;">Want to buy something</h3>
+	<h3 style="text-align: center;color:orange;">Check Our Store</h3>
+	<center>
+		<button style="background-color:#490807 /*#5f0a09*/;border:2px solid gray;color:white;border-radius: 4px;font-size:1.3em;font-family:sans-serif , Arial , bold;"><a href="." style="text-decoration: none;">Go to shop</a></button>
+	</center>
+</div>
+
+<div style="border-top:3px solid #5f0a09;padding: 10px;width:90%;">
+<center>
+	<form action="http://www.skyteam.herokuapp.com/search/" method="GET"  >{% csrf_token %}
+    <input type="text" placeholder ="Search ..." name="search" class="w3-contain" style="width:90%;border-radius: 3px;padding:7px;background: rgba(0, 0, 0, 0.29); color:white;border:1px solid darkred;">
+    <br>
+    <input type="submit" value="submit" style="background:#5f0a09 ; color:white;border-radius: 5px;padding-right:40px;padding-bottom: 5px;cursor: pointer;">
+    <img src="https://i.imgur.com/5i1vy6v.png" style="position:absolute;margin:0px 0px 0px -40px;cursor: pointer;">
+    
+    </form>
+    <br>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- side -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4694231391944648"
+     data-ad-slot="4548159538"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </center>
+</div>
+</center>
+
+</div>
+
+{% endblock %}

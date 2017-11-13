@@ -1,0 +1,54 @@
+{% extends 'base-shop.html'%}
+{%block content%}
+<center>
+<div class="pres">
+    <h2 class="textt"><span  style="background: black;padding:20px 15% 20px 15%;border-radius: 5px;width:80%;"> welcome to skyteam Shop</span></h2>
+    <div class="pres-pics">
+        <img src="pic.png" width="21%" height="55%">
+        <img src="https://static.pexels.com/photos/69432/pexels-photo-69432.jpeg" width="21%" height="55%">
+        <img src="http://h-don.com/photos/acc/35.jpg" width="21%" height="55%">
+        <img src="http://www.nappyisbeautiful.be/wp-content/uploads/2015/09/visuel_SleekMakeUp_tous-les-produits.jpg" width="21%" height="55%">
+    </div>
+    
+    </div>
+<header>
+    <h1 class="shop-header w3-contain" >Our product </h1>
+    
+<div id="a"  class="dropdown" style="background: #7B0606;position:absolute;margin-top:-64px;margin-left: 140px;border-radius: 10px;background:transparent;">
+    <button  class="dropbtn" onclick="myFunction1()">Filter category</button>
+    <div class="dropdown-content" id="myDropdown1">
+      <a href="#">All posts</a>
+      <a href="#">New posts</a>
+        {%for categorys in category%}
+      <a href="{{categorys.get_absolute_url}}">{{categorys.name}}</a>
+        {%endfor%}
+    </div>
+    
+  </div></header></center>
+    
+<br>
+<!--<center>
+<h1 class="big-title" >Shop content</h1>
+</center>
+<div id="a"  class="dropdown" style="background: #7B0606;position:absolute;margin-top:-64px;">
+    <button  class="dropbtn" onclick="myFunction1()">Filter category</button>
+    <div class="dropdown-content" id="myDropdown1">
+      <a href="#">All posts</a>
+      <a href="#">New posts</a>
+        {%for categorys in category%}
+      <a href="{{categorys.get_absolute_url}}">{{categorys.name}}</a>
+        {%endfor%}
+    </div>
+  </div>-->
+<div class="shop-content">
+    {%for article in articles%}
+    <article class="w3-contain info">
+        <h1 class="w3-contain shop-title"><a href="{{get_absolute_url}}">
+            {{article.name}} </a>
+        </h1>
+        <center>
+        <img src="{{article.url}}" class="shop-image"></center>
+        <p class="shop-article">{{article.description}}</p>
+    </article>
+    {%endfor%}
+{%endblock%} 

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+<center>
+<div class="w3-contain w3-border w3-round-xlarge" style="background-color: #00796B;width:75%;border:2px white;">
+<article>
+<header>
+<h1 class="w3-contain w3-border w3-round-xlarge" style="margin:15px;text-align: center;font-family: bold, Arial, sans-serif;background-color: white;color:#00796B;"> {{post.title}} </h1>
+</header>
+<center>
+<img src="{{post.url}}" style="margin:auto;width: 500px;height: 250px;"></center>
+<div class="w3-contain w3-border w3-round-xlarge" style="background-color: white;border:#00796B solid ;color:black;font-family: Helvetica, sans-serif;text-align:left;margin: 10px;padding: 10px;">
+  {{post.content|safe}}
+</div>
+</article>
+<p class=" " style="float: right;color:white; >
+Posted on
+<time datetime="{{post.created|date:'c'}}">
+{{post.created|date}}
+</time>
+</p>
+</div>
+<br>
+	{%for commentt in comment%}
+	<div class="w3-contain w3-border w3-round-xlarge" style="background-color:#006064;margin:10px;width:75%;">
+		<h3 class="w3-contain" style="color:#F8BBD0;border:2px #00796B solid;border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;width:25%;float:left;margin-top:-1px;height:40px;">Name : {{commentt.name}}</h3>
+		<h4 class="w3-contain" style="color:#F8BBD0;border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;width:75%;float:right;border:2px #00796B solid;margin-top:-18.6px;padding-bottom: 5px;"> Email :  {{commentt.email}}</h4>
+		<br>
+		<p class="w3-contain  w3-round-xlarge" style="text-align: left;padding-left: -20px;width:100%;color:#F8BBD0;">
+		 {{commentt.desc}}</p>
+	</div>
+	{%endfor%}
+
+
+</center>
+<center>
+<div class="w3-contain w3-border w3-round" style="width:75%;background-color: #006064;">
+	<form action={{post.get_absolute_url}} method="post">{% csrf_token %}
+		<h3 style="color:#F8BBD0;text-align:left;margin-left: 10px;">Name <input class="w3-contain w3-border w3-round-xlarge" style = "padding:5px;width:25%; background-color:#FCE4EC;" type="text" name="name" ></h3>
+		<h3 style="color:#F8BBD0;text-align: left;margin-left: 10px; ">Email <input class="w3-contain w3-border w3-round-xlarge" style = "padding:5px; background-color:#FCE4EC;" type="text" name="email"></h3>
+    <h3 style="color:#F8BBD0;">Your comment <br> <textarea class="w3-border w3-round-xlarge  " style = "padding:10px; background-color: #FCE4EC;width:70%;" type="password" name="comment"></textarea></h3>
+		<center><input class="w3-contain w3-round-xlarge
+    w3-border" style="background-color:#FCE4EC;color:#6A1B9A;font-size:15px;padding:5px;width:200px;height:35px;" type="submit" value="submit" name="submit"></center>
+	</form>
+</div></center>
+{% endblock %}

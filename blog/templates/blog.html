@@ -103,8 +103,8 @@
     <div id="a"  class="dropdown" style="background: #5f0a09;position:absolute;margin-top:-64px;">
     <button  class="dropbtn" onclick="myFunction1()">Filter category</button>
     <div class="dropdown-content" id="myDropdown1">
-      <a href="http://127.0.0.1:8000/blog">All posts</a>
-      <a href="http://127.0.0.1:8000/news">New posts</a>
+      <a href="https://skyteam.herokuapp.com/blog">All posts</a>
+      <a href="https://skyteam.herokuapp.com/news">New posts</a>
         {%for categorys in category%}
       <a href="{{categorys.get_absolute_url}}">{{categorys.name}}</a>
         {%endfor%}
@@ -181,7 +181,7 @@
 
 <div style="border-top:3px solid #5f0a09;padding: 10px;width:90%;">
 <center>
-	<form action="http://www.skyteam.herokuapp.com/search/" method="GET"  >{% csrf_token %}
+	<form action="https://skyteam.herokuapp.com/search/" method="GET"  >{% csrf_token %}
     <input type="text" placeholder ="Search ..." name="search" class="w3-contain" style="width:90%;border-radius: 3px;padding:7px;background: rgba(0, 0, 0, 0.29); color:white;border:1px solid darkred;">
     <br>
     <input type="submit" value="submit" style="background:#5f0a09 ; color:white;border-radius: 5px;padding-right:40px;padding-bottom: 5px;cursor: pointer;">

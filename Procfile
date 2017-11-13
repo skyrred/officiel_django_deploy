@@ -1,1 +1,1 @@
-web: gunicorn netmag.wsgi 
+web: gunicorn netmag.wsgi

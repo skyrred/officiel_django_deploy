@@ -6,7 +6,7 @@ from django.core.files import File
 
 
 def index(request):
-	posts = Post.objects.all()
+	posts = Post.objects.all()[0:3]
 	return render(request ,'indexx.html',{'posts':posts})
 def blog(request):
 	posts = Post.objects.filter(published = True)
@@ -109,8 +109,8 @@ Subject:  (%a)
 		server.sendmail("teamsky.work@gmail.com",mail.email,msg)
 		return redirect("http://127.0.0.1:8000")
 def news(request):
-	posts = Post.objects.filter(published = True)[0:3]
-	posts2 = Post2.objects.filter(published = True)[0:3]
+	posts = Post.objects.filter(published = True)[0:6]
+	posts2 = Post2.objects.filter(published = True)[0:6]
 	categorys = category.objects.all()
 	number = str(Sub.objects.count())
 	return render(request , 'blog.html' , {'posts':posts,'posts2':posts2,'category':categorys,'num':number})

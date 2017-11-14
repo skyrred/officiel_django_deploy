@@ -24,11 +24,11 @@
     	<img src="{{post.url}}" width="50%" height="50%">
     	{{post.content|safe}}
     </div>
-    	</div></center>
+    	</div>
 <div class="sidebar">
 <center>
 <div id="subbg" class="w3-contain   " style="background-color: white;width:90%;height:30%;border-top:3px #5f0a09 solid;padding: 10px;border-radius: 1px;	">
-	<form action="http://127.0.0.1:8000/subscribe/" method="post">{% csrf_token %}
+	<form action="https://skyteam.herokuapp.com/subscribe/" method="post">{% csrf_token %}
 	 <h3 style="padding-left: 15px;color:#5f0a09;">Name <input class="w3-contain w3-white  " style="border:darkred solid 1px;width:80%;padding: 5px;" type="text" name="name"></h3>
 	 <h3 style="padding-left: 15px;color:#5f0a09;">Email  <input class="w3-contain w3-white  " style="border:darkred solid 1px;width:80%;padding: 5px;margin-left: 7px;" type="text" name="email"> </h3>
 	 <center>
@@ -42,7 +42,7 @@
 	<h3 style="text-align: center;color:white;">Want to buy something</h3>
 	<h3 style="text-align: center;color:orange;">Check Our Store</h3>
 	<center>
-		<button style="background-color: /*#5f0a09*/white;border:2px solid darkgray;color:black;border-radius: 4px;font-size:1.1em;font-family:sans-serif , Arial , bold;"><a href="http://127.0.0.1:8000/shop" style="text-decoration: none;">Go to shop</a></button>
+		<button style="background-color: /*#5f0a09*/white;border:2px solid darkgray;color:black;border-radius: 4px;font-size:1.1em;font-family:sans-serif , Arial , bold;"><a href="." style="text-decoration: none;">Go to shop</a></button>
 	</center>
 </div>
 

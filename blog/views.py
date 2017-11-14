@@ -86,13 +86,13 @@ def subscribe(request):
 		file.write("\n")
 		file.write(email)
 		file.close()
-		return  redirect('http://127.0.0.1:8000/blog')
+		return  redirect('https://skyteam.herokuapp.com/blog')
 	else:
 		return redirect('https://www.google.com')
 def share(request):
 	maillist = Sub.objects.all()
 	about = "New post"
-	url = "http://127.0.0.1:8000/news"
+	url = "https://skyteam.herokuapp.com/news"
 	server = p.SMTP("smtp.gmail.com",587)
 	server.starttls()
 	server.login("teamsky.work@gmail.com","teamskywork123")
@@ -107,7 +107,7 @@ Subject:  (%a)
 
 """	% (mail.name,about,url)
 		server.sendmail("teamsky.work@gmail.com",mail.email,msg)
-		return redirect("http://127.0.0.1:8000")
+		return redirect("https://skyteam.herokuapp.com")
 def news(request):
 	posts = Post.objects.filter(published = True)[0:6]
 	posts2 = Post2.objects.filter(published = True)[0:6]

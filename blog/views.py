@@ -27,13 +27,13 @@ def view_blog_post(request , slug):
 			c.save()
 	comment = comment1.objects.filter(post = post)
 	posts = Post.objects.all()
-	if len(posts) > 3:
-		while len(count) <= 3:
-			post_random = random.choice(posts)
-			count.append(post_random)
-		return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':count})
-	else:
-		return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':posts})
+	#if len(posts) > 3:
+		#while len(count) <= 3:
+			#post_random = random.choice(posts)
+			#count.append(post_random)
+		#return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':count})
+	#else:
+	return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':posts})
 
 def view_post_2(request , slug):
 	post = get_object_or_404(Post2 , slug = slug)

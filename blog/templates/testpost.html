@@ -24,7 +24,10 @@
     <a href="{{post.category.get_absolute_url}}" >{{post.category.name}}</a> <span> >>> </span>
     <a href="{{post.get_absolute_url}}">{{post.title}} </a>
     </div>
+    <br>
+    <br>
     <div style="float:left;width:55%;margin-right: 0%;margin-left: 0;">
+    
     <div style="width:120%;">
 
     	<h1 class="post-head"> {{post.title}}</h1>
@@ -82,9 +85,10 @@
 </div>
 <div class="next_before_nav">
 	<h3 style="color:darkgray;">You may be interested in this </h3>
-	{% for other_post in posts%}
-    	<a style="float:left;" href="{{other_post.get_absolute_url}}">{{other_post.title}}
-    {%endfor%}	
+	
+    	<a style="float:left;" href="{{post.get_next_by_created.get_absolute_url}}">{{post.get_next_by_created.title}}
+    	<a style="float:left;" href="{{post.get_previous_by_created.get_absolute_url}}">{{post.get_previous_by_created.title}}
+    	
     	</div>
 	<div style="float:left;width: 80%;border-top:3px solid darkred;margin-top: 15px;padding-left: 20px;">
 	

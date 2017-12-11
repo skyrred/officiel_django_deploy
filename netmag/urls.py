@@ -21,7 +21,7 @@ from shop.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', blog ), 
+    url(r'^blog/', blog , name="blog_index"), 
     url(r'^$',index),
     url(r'^send/result/$',sending),
     url(r'^send/$',send),

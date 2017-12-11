@@ -1,6 +1,9 @@
 {% extends 'blog-base.html' %}
 
-{% block title %}{{post.title}}{% endblock %}
+{% block title %}Skyteam-Blog | {{post.title}}{% endblock %}
+{%block description%}
+{{post.description}}
+{%endblock%}
 
 {% block content %}
 <!--<div class="posts">
@@ -16,13 +19,23 @@
     </div>
   </div>  
     </div>-->
-    <div style="float:left;width:55%;margin-right: 0%;margin-left: -10%">
+    <div class="post_nav" >
+    <a href="{{post.go_home_blog}}">Skyteam-Blog </a><span> >>> </span>
+    <a href="{{post.category.get_absolute_url}}" >{{post.category.name}}</a> <span> >>> </span>
+    <a href="{{post.get_absolute_url}}">{{post.title}} </a>
+    </div>
+    <div style="float:left;width:55%;margin-right: 0%;margin-left: 0;">
     <div style="width:120%;">
-    	<h1 class="post-head"> {{post.title}}</h1>
 
+    	<h1 class="post-head"> {{post.title}}</h1>
+    	
     
     	<img src="{{post.url}}" width="50%" height="50%">
+    	
     	{{post.content|safe}}
+    	
+    	<h4 style="color:gray;float:right;">posted in {{post.created}}</h4>
+    	
     </div>
     	</div>
 <div class="sidebar">
@@ -67,7 +80,14 @@
 </div>
 </center>
 </div>
-	<div style="float:left;width: 60%;border-top:3px solid darkred;margin-top: 15px;padding-left: 20px;">
+<div class="next_before_nav">
+	<h3 style="color:darkgray;">You may be interested in this </h3>
+	{% for other_post in posts%}
+    	<a style="float:left;" href="{{other_post.get_absolute_url}}">{{other_post.title}}
+    {%endfor%}	
+    	</div>
+	<div style="float:left;width: 80%;border-top:3px solid darkred;margin-top: 15px;padding-left: 20px;">
+	
 	{%for commentt in comment%}
 	<div style="border-bottom: 1px solid gray;">
 		<h3 style="color:darkred;font-size: 30px;" >{{commentt.name}}</h3>

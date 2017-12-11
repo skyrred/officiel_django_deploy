@@ -7,9 +7,12 @@
     enable_page_level_ads: true
   });
 </script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59395dcd4672462f"></script>
+
 <meta name="viewport" width="device-width, initial-scale=1.0">
 <meta name="author" content="Skyteam">
-<meta name="description" content="this site give you all that you need" >
+<meta name="description" content="{%block description%} {%endblock%}" >
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="style.css">
 <title>{%block title%}
@@ -17,6 +20,37 @@
  </title>
 
 <style>
+.next_before_nav{
+    display: inline-block;
+    margin: 10px;
+    width:60%;
+    float: left;
+
+}
+.next_before_nav a{
+    color:darkred;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.next_before_nav a:hover{
+    color:orange;
+}
+.post_nav{
+    display:inline-block;
+    float:left;
+    margin: 10px;
+}
+.post_nav a{
+    color:darkred;
+    margin: 5px;
+}
+.post_nav a:hover{
+    color:orange;
+}
+.post_nav span{
+    color:darkred;
+}
 .logo{
     height:13.6em;
     text-align: center;
@@ -203,9 +237,9 @@
     padding-right: 0%;
 }
 .logoo{
-    width:38em;
-    height:23em;
-    margin: -70px -250px 0 -150px;
+    width:33em;
+    height:19em;
+    margin: -50px -300px 0px -150px;
     float:left;
     top:10em;
     padding:0px;

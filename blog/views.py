@@ -24,7 +24,8 @@ def view_blog_post(request , slug):
 			c = post.comment1_set.create(name = name , email = email , desc = cmnt)
 			c.save()
 	comment = comment1.objects.filter(post = post)
-	return render(request,'testpost.html',{'post':post,'comment':comment})
+	posts = Post.objects.all()[0:3]
+	return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':posts})
 
 def view_post_2(request , slug):
 	post = get_object_or_404(Post2 , slug = slug)

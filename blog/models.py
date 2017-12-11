@@ -25,6 +25,9 @@ class Post(models.Model):
 	@permalink
 	def get_absolute_url(self):
 		return ("blog_post" ,None ,{'slug':self.slug})
+	@permalink
+	def go_home_blog(self):
+		return ("blog_index",None)
 
 #	def get_url(self):
 		#return reverse("blog.views.post" , args = self.slug)

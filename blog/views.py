@@ -3,6 +3,7 @@ from blog.models import Post,Post2,category,Sub,comment1,comment2
 import webbrowser
 import smtplib as p
 from django.core.files import File
+import random
 
 
 def index(request):
@@ -15,6 +16,7 @@ def blog(request):
 	number = str(Sub.objects.count())
 	return render(request , 'blog.html' , {'posts':posts,'posts2':posts2,'category':categorys,'num':number})
 def view_blog_post(request , slug):
+	count = []
 	post = get_object_or_404(Post , slug = slug)
 	if (request.method == 'POST'):
 		name = request.POST.get('name' , None)
@@ -24,8 +26,14 @@ def view_blog_post(request , slug):
 			c = post.comment1_set.create(name = name , email = email , desc = cmnt)
 			c.save()
 	comment = comment1.objects.filter(post = post)
-	posts = Post.objects.all()[0:3]
-	return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':posts})
+	posts = Post.objects.all()
+	if len(posts) > 3:
+		while len(count) <= 3:
+			post_random = random.choice(posts)
+			count.append(post_random)
+		return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':count})
+	else:
+		return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':posts})
 
 def view_post_2(request , slug):
 	post = get_object_or_404(Post2 , slug = slug)

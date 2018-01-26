@@ -37,6 +37,8 @@ urlpatterns = [
     url(r'^shop/category/(?P<slug>[^\.]+)/$',view_category_shop, name = 'category-shop-content'),
     url(r'^shop/search/$',search , name='search-content'),
     url(r'^search/$',blog_search ),
+    url(r'^skyapp/$',skyapp_index , name='skyapp_index'),
+    url(r'^skyapp/pay/$',skyapp_pay , name='skyapp_pay'),
     #url(r'^(?P<slug>[\w\-]+)/$',view_post, name = "blog_post"),
     #url(r'^blog/view/show/(?P<slug>[^\.]+).html',post,name='blog_pst'),
 

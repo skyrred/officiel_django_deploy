@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response ,render,get_object_or_404,redirect
-from blog.models import Post,Post2,category,Sub,comment1,comment2
+from blog.models import Post,Post2,category,Sub,comment1,comment2,app_user
 import webbrowser
 import smtplib as p
 from django.core.files import File
@@ -134,3 +134,15 @@ def blog_search(request):
  		#import webbrowser
  		#webbrowser.open("www.google.com")
  		return render(request , 'blog.html' , {'posts':posts,'posts2':posts2,'category':categorys,'num':number})
+def skyapp_index(request):
+	return render(request,'skyapp.html')
+
+def skyapp_pay(request):
+	if request.method == "POST":
+		name = request.POST.get("name")
+		surname = request.POST.get("surname")
+		email = request.POST.get("email")
+		password = request.POST.get("password")
+		new_user = app_user(name=name,surname=surname,email = email , password=password)
+		new_user.save()
+	return redirect('https://skyteam.herokuapp.com')

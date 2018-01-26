@@ -73,6 +73,11 @@ class comment2(models.Model):
 	def __str__(self):
 		return '%s' % self.name
 
-
+class app_user(models.Model):
+	name = models.CharField(max_length=255)
+	surname = models.CharField(max_length=255)
+	email = models.CharField(max_length=255)
+	password = models.CharField(max_length=255)
+	paid = models.BooleanField(default=False)
 
 # Create your models here.

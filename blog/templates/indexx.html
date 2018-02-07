@@ -15,6 +15,14 @@
 <link rel="stylesheet" href="style.css">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 .logo{
     height:13.6em;
@@ -38,7 +46,7 @@ body,html{
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    height:100%;
+    height:100vh;
 }
 .transparent {
     font-size: 3.5em;
@@ -71,15 +79,31 @@ body,html{
 .mainbut{
     background:transparent;
     border:3px solid white;
-    border-radius: 25px;
+    border-radius: 15px;
     color:white;
     padding:20px;
     font-size: 20px;
     cursor: pointer;
+    width:200px;
 }
 .mainbut:hover{
     color:#db2824;
     border:3px solid #db2824;
+    text-decoration: underline;
+}
+.ytb-btn{
+    background:transparent;
+    border:3px solid white;
+    border-radius: 15px;
+    color:white;
+    padding:20px;
+    font-size: 20px;
+    cursor: pointer;
+    width:200px;
+}
+.ytb-btn:hover{
+    color:#00E5FF;
+    border:3px solid #00E5FF;
     text-decoration: underline;
 }
 .transparent1 {
@@ -133,7 +157,7 @@ body,html{
 }
 .presentation{
     width:100%;
-    background: rgb(41, 0, 0);
+    background: #151414;
     padding-left :15px;
     padding-right:15px;
     margin: 0px;
@@ -229,13 +253,13 @@ body,html{
     width:60%;
     margin-left: 15px;
 }
-.container {
+/*.container {
     overflow: hidden;
-    background-color: /*#7B0606;*/transparent;
+    background-color: /*#7B0606;*//*transparent;
     font-family: Arial;
     float:right;
     position: relative;
-    color:#c6b097;
+    color:#c6b097;*/
     
 }
 .body{
@@ -243,7 +267,7 @@ body,html{
     display: inline-block;
 }
 
-.container a {
+.list a {
     float: left;
     font-size: 16px;
     color: white;
@@ -252,13 +276,13 @@ body,html{
     text-decoration: none;
 }
 
-.dropdown  {
+.drop-down  {
     float: left;
     overflow: hidden;
     color:#c6b097;
 }
 
-.dropdown .dropbtn   {
+.drop-down .dropbtn   {
     cursor: pointer;
     font-size: 16px;    
     border: none;
@@ -268,7 +292,7 @@ body,html{
     background-color: inherit;
 }
 
-.container a:hover,.dropdown:hover  .dropbtn {
+.list a:hover,.drop-down:hover .dropbtn  {
    /* background-color: darkred;*/
     border-bottom: 3px solid #db2824;
     color : #db2824;
@@ -300,7 +324,24 @@ body,html{
 
 .show {
     display: block;
-}</style>
+}
+    .list{
+        float:right;
+    }  
+    .mainbut a{
+        color:white;
+    }
+    .mainbut a:hover{
+        color:#db2824;
+    }
+    .ytb-btn a{
+        color:white;
+    }
+    .ytb-btn a:hover{
+        color:#00E5FF;
+    }
+    
+    </style>
 <title> Skyteam website</title>
     
     <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59395dcd4672462f"> 
@@ -375,8 +416,8 @@ setInterval(changedate,1000);
         <h1 class="txt"><span class="spn"> Welcome to skyteam </span></h1>
         <h3 class="txt1"><span class="spn">Everything you need</span></h3>
     </div>-->
-    <div class="banner">
-        <div class="container">
+    <div class="banner container-fluide">
+        <!--<div class="container">
   <a href="https://skyteam.herokuapp.com/">Home</a>
   <a href="/blog">Blog</a>
   <a href="http://www.skyteamwork.cf/forum">Forum</a>
@@ -388,24 +429,52 @@ setInterval(changedate,1000);
       <a href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ">Youtube</a>
     </div>
   </div> 
-</div>
+</div>-->
+        <ul class="list-unstyled list-inline list">
+            <li><a href="https://skyteam.herokuapp.com/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="http://www.skyteamwork.cf/forum">Forum</a></li>
+            <li><a href=".">SkyApp</a></li>
+            <li><a href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ">Youtube</a></li>
+            <!--<li><div class="dropdown">
+                <button class="dropbtn dropdown-toggle" type="button" data-toggle = "dropdown">Skyteam info
+                <span class="caret"></span>
+                </button>
+                
+                    <ul class="dropdown-menu">
+                        <li><a href=".">SkyApp</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ">Youtube</a></li>
+                    </ul>-->
+                    
+                    
+                    
+                </ul>
+                
+                
         <br>
         <center>
-            <div style="margin-top: 200px;">
-	<!--<h2 class ="txt w3-container">--><h1 class="transparent"> WELCOME TO SKYTEAM</h1> <!--</h2>--> <br> <!--<h3 class="txt1 w3-container">--> <h1 class="transparent1">EVERYTHING YOU NEED</h1> </div>
             <br>
             <br>
-        <button id="testy" class="mainbut" onclick="move()">Start Now</button>
+            <br>
+            <div class="welcoming">
+                <center>
+                <h1 class="text-center w3-animate-top" style="background:#000000c4;color:#db2824;font-size:100px;padding: 20px;">Welcome to Skyteam</h1>
+                <h2 class="text-center w3-animate-bottom" style="background:#000000c4;color:#00695C;font-size: 50px;margin-top: -10.5px;padding: 15px;">Everything you need</h2>
+                    </center>
+            </div>
+            <br>
+            <br>
+        <button id="testy" class="mainbut btn" onclick="move()">Start Now</button>
         </center>
         <!--</h3>-->
-        <br>
+        <!--<br>
         <center>
         <div class="secondbut" style="display: inline-block;width:100%;">
             <button style="float:left;margin-right: 40px;" id="testy1"  onclick="move1()">Shop(soon)</button>
             <button style="float:left;margin-left:20px;" id="testy2"  onclick="move2()">Forum</button>
             <button style="float:right;margin-left:20px;" id="testy3"  onclick="move3()">Youtube</button>
             <button style="float:right;margin-right:40px;" id="testy4"  onclick="move4()">Contact</button>
-        </div></center>
+        </div></center>-->
 </div>
 <script>
     function testblock(){
@@ -434,23 +503,74 @@ setInterval(changedate,1000);
     }
     </script>
     
-    <div id="youtube" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
-    <div style="width:100%;float:left;">
-    <center>
-    <h1  style="font-family: sans-serif,Arial;color: #db2824;">Visit our youtube Channel</h1></center>
-        <div class="text-back-info">
-        <h3 id="text-back" style="padding:10px;color:white;">There you can find more videos about many subjects cracking games/software , news about anything sports,tech and for sure many tutorials , I will try for sure to share everything I know with you there .</h3></div></div>
+    <div id="youtube" style="width:100%;background:black;border-bottom: 1px solid white;" class="container-fluide">
         <center>
-        <img id="ytb-image" src="https://i.imgur.com/FtoUOXt.jpg" style="height: 300px;"></center>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog/main -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4694231391944648"
+     data-ad-slot="3597684726"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></center>
         <center>
-        <button id="btn-anim" style="" onclick=""><a style="text-decoration: none;" href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ">to see more</a></button></center>
+    <h1  style="font-family: sans-serif,Arial;color: #00E5FF;margin-top: 0px;padding: 20px;text-shadow: 1px 1px #00E5FF;">Visit our youtube Channel</h1></center>
+        <div>
+    <div  class= "container-fluide" >
+    
+        <div >
+            <br>
+        <h2 id="text-back" style="padding:10px;color:white;margin-top: 0px;" class="text-left;">There you can find more videos about many subjects cracking games/software , news about many things like sports,techbologie, programing in python , java and how to build websites , also we will have some fun playing some video games , reacting to many funny video , share my experience with you and help you to change your life to the best and for sure many tutorials on how you can fix something , create your own project and how to choose your way in life . I will try for sure to share everything I know with you there .</h2></div></div>
+            <div class="container-fluide">
+        
+            <h2>Aspect ratio 16:9</h2>
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BaFkfvt0SwU"></iframe>
+  </div>
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/BaFkfvt0SwU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+        
         </div>
-    <div id="blog" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
-    <div style="width:100%;float:left;margin-top: 0px;">
+            </div>
+        <center>
+        <button class="ytb-btn" style="" onclick=""><a style="text-decoration: none;" href="https://www.youtube.com/channel/UCLAkNf2G1YfO-Fv4itq3sTQ">to see more</a></button></center>
+        <br>
+        </div>
+    <div id="blog" style="width:100%;background:#151414;border-bottom: 1px solid white;">
+    <div style="margin-top: 0px;">
     <center>
-    <h1  style="font-family: sans-serif,Arial;color: #db2824;"><a style="text-decoration: none;" href="/blog">Visit our Blog</a></h1></center>
-        <h3 style="color:white;padding: 10px;">There you can find more videos about many subjects cracking games/software , news about anything sports,tech and for sure many tutorials , I will try for sure to share everything I know with you there .</h3></div>
-        <div style="width:100%;display:block;clear:both:vertical-align:center;margin-left:1%;">
+    <h1  style="font-family: sans-serif,Arial;color: #db2824;margin-top: 0px;">Visit our Blog<a style="text-decoration: none;" href="/blog"></a></h1></center>
+        <h3 style="color:white;padding: 10px;">Are you interested in travelling , technologie , culture and you want to know everything about many domains , then SkyBlog is your way to go , we talk about everything sports,world news , technologie news and even we try to share our experience to help succed in your life so what are you waiting for visit SkyBlog now.</h3></div>
+        
+        <div class="container-fluide">
+            <h3 style="color:aqua;" class="text-center">Our latest Posts</h3>
+            <br>
+            
+            
+                <div class="container">
+  <div class="row">
+    {%for post in posts%}
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{{post.get_absolute_url}}" target="_blank">
+          <img src="{{post.url}}" alt="Fjords" style="width:100%;height:300px;">
+          <div class="caption">
+            <h3 style="color:#00695C;">{{post.title}}</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+      {%endfor%}
+  </div>
+</div>
+
+            
+            
+            
+        
+        
+        </div>
+        <!--<div style="width:100%;display:block;clear:both:vertical-align:center;margin-left:1%;">
         {%for post in posts%}
             <article class="w3-contain " style="width:20%;float:right;cursor:pointer;margin-right: 4.5%; ">
             <h3 style="background:rgba(219, 40, 36, 0.5);color:white;position: absolute;width:20%;margin-top:-1px;"><a style="text-decoration: none;" href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
@@ -486,11 +606,11 @@ setInterval(changedate,1000);
             <h1 style="height: 30%;background:rgb(41, 0, 0);">Title here</h1>
                 <img src="132235.jpg" style="width:100%;height: 70%;">
             </div>-->
-             </div></div>
+             </div>
             
         
         
-        <div id="forum" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
+        <!--<div id="forum" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
     <div style="width:100%;float:left;">
     <center>
     <h1 style="font-family: sans-serif,Arial;color: #db2824;">Join our Discussion Forum</h1></center>
@@ -499,7 +619,7 @@ setInterval(changedate,1000);
             <center>
             <button id="btn-anim" style="" onclick=""><a style="text-decoration: none;" href="http://www.skyteamwork.cf/forum/">to see more</a></button></center>
         </div>
-    
+    -->
     
          <!--<div id="shop" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
     <div style="width:100%;float:left;margin-top: 0px;">
@@ -541,6 +661,37 @@ setInterval(changedate,1000);
                 <img src="132235.jpg" style="width:100%;height: 70%;">
 </div>
              </div></div>-->
+    <div id="skyapp" class="container-fluide" style="background:black;">
+        <h1 class="text-center" style="color:#00E5FF;margin-top: 0px;">Check our apps</h1>
+        <div class="container">
+            <h3 style="color:white;">Here , you can find every app has been created by SkyTeam in different platefroms like window/android , also we accept creating customized apps , for more informations check skyapp....</h3>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="thumbnail">
+                        <img src="https://i.imgur.com/KTPXlk1.png" alt="android" >
+                    </div>
+                    <h3 style="color:#00695C;" class="text-center">android</h3>
+                    
+                </div>
+                <div class="col-sm-6 text-center">
+                    <div class="thumbnail">
+                        <img src="https://i.imgur.com/o1ky3le.png" alt="windows" >
+                    </div>
+                    <h3 style="color:#00695C;" class="text-center">Windows</h3>
+                    
+                </div>
+            
+            </div>
+            <center>
+            <button class="ytb-btn" style="" onclick=""><a style="text-decoration: none;" href="/skyapp">to see more</a></button></center>
+            <br>
+            <br>
+            
+        
+        </div>
+    
+    
+    </div>
     <div class="presentation" >
         <center>
         <img src="https://i.imgur.com/70opJMp.jpg" >
@@ -550,10 +701,10 @@ setInterval(changedate,1000);
         <h2 style="color:#db2824;font-family: serif,Arial;">Want to build a website ?</h2>
         <p>if you are looking to build a website for a very nice price who can do multi function taches and even hundle some advanced functions or looking to make your dream real show the world what you want to do or you are tired of doing things manually and you feel like wasting time then you are in the right place contact me and we can work on some projects I can make your dream apps real help you getting to write your first line of code (if you are looking to learn) or build an app for you to make your taches easier for this you can contact me in my email <h9 id="email">sky.red2212@gmail.com</h9> or check out my gig below </p>
         <center>
-            <button id="btn-anim" style="" onclick=""><a style="text-decoration: none;" href="https://www.fiverr.com/skyred525/do-you-python-django-scripts-for-web-apps">to see more</a></button></center></center>
+            <button class="mainbut" style="margin:10px;" onclick=""><a style="text-decoration: none;" href="https://www.fiverr.com/skyred525/do-you-python-django-scripts-for-web-apps">to see more</a></button></center></center>
     </div>
-        <div id="contact" style="width:100%;background:rgb(41, 0, 0);border-bottom: 1px solid white;">
-    <div style="width:100%;float:left;background:rgb(41, 0, 0);">
+        <div id="contact" style="width:100%;background:black;border-bottom: 1px solid white;">
+    <div style="width:100%;float:left;background:black;">
     <center>
     <h1 style="font-family: sans-serif,Arial;color: #db2824;">Contact Us</h1></center>
         <center>
@@ -565,6 +716,7 @@ setInterval(changedate,1000);
             <br>
             <input style="height:75px;padding-left: 25px;padding-right:25px;cursor:pointer; border:none;background:#db2824;color:white;margin:10px;font-size:25px;" type="submit" value="submit" name="submit">
         </form></center>
+        <center>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- blog/main -->
 <ins class="adsbygoogle"
@@ -573,7 +725,7 @@ setInterval(changedate,1000);
      data-ad-slot="3597684726"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+</script></center>
             </div></div>
     
         <div class="foot" style="width:100%;background:rgba(0, 0, 0, 0.82);border-bottom:1px solid white;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">

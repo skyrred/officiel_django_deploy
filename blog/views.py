@@ -7,7 +7,7 @@ import random
 
 
 def index(request):
-	posts = Post.objects.all()[0:3]
+	posts = Post.objects.all()[:3]
 	return render(request ,'indexx.html',{'posts':posts})
 def blog(request):
 	posts = Post.objects.filter(published = True)

@@ -148,4 +148,4 @@ def skyapp_pay(request):
 		password = request.POST.get("password")
 		new_user = app_user(name=name,surname=surname,email = email , password=password)
 		new_user.save()
-	return redirect('https://skyteam.herokuapp.com')
+	return redirect('http://www.mediafire.com/file/sv05pehu93s986n/skydrop%282%29.zip')

@@ -80,4 +80,13 @@ class app_user(models.Model):
 	password = models.CharField(max_length=255)
 	paid = models.BooleanField(default=False)
 
+
+class skyfoot_news(models.Model):
+    name = models.CharField(max_length=255)
+    url = models.CharField(max_length=255)
+    created = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.name
+
 # Create your models here.

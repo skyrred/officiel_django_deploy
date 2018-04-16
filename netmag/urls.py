@@ -39,6 +39,7 @@ urlpatterns = [
     url(r'^search/$',blog_search ),
     url(r'^skyapp/$',skyapp_index , name='skyapp_index'),
     url(r'^skyapp/pay/$',skyapp_pay , name='skyapp_pay'),
+    url(r'^skyfoot/$',skyfoot_index,name='skyfoot'),
     #url(r'^(?P<slug>[\w\-]+)/$',view_post, name = "blog_post"),
     #url(r'^blog/view/show/(?P<slug>[^\.]+).html',post,name='blog_pst'),
 

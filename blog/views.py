@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response ,render,get_object_or_404,redirect
-from blog.models import Post,Post2,category,Sub,comment1,comment2,app_user
+from blog.models import Post,Post2,category,Sub,comment1,comment2,app_user,skyfoot_news
 import webbrowser
 import smtplib as p
 from django.core.files import File
@@ -70,7 +70,7 @@ Subject: BUG repport about (%a)
 """	% (name,about,description)	
 		server = p.SMTP("smtp.gmail.com",587)
 		server.starttls()
-		server.login("teamsky.work@gmail.com","zisupsfulqyyfkos")
+		server.login("teamsky.work@gmail.com","nefdaaxgeddqxxyv")
 		server.sendmail("skyteam.work@gmail.com","sky.red2212@gmail.com",msg)
         #server.lgoin("teamsky.work@gmail.com","teamskywork123")
         #server.sendmail("skytechno.work@gmail.com","sky.red2212@gmail.com",msg)
@@ -151,3 +151,10 @@ def skyapp_pay(request):
 		new_user = app_user(name=name,surname=surname,email = email , password=password)
 		new_user.save()
 	return redirect('http://www.mediafire.com/file/sv05pehu93s986n/skydrop%282%29.zip')
+
+
+def skyfoot_index(request):
+    new = skyfoot_news.objects.all().order_by('created')[0:3]
+    categories = get_object_or_404(category ,slug = "world-cup")
+    posts = Post.objects.filter(category = categories).order_by('created')[0:3]
+    return render(request,"skyfoot_index.html",{"news":new,"posts":posts})

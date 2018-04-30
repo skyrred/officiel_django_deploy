@@ -43,6 +43,7 @@ class Post2(models.Model):
 	slug = models.SlugField(unique = True , max_length=255)
 	url = models.CharField(max_length = 500)
 	description = models.CharField(max_length = 200)
+    #views = models.AutoField(default = 0)
 	content = models.TextField()
 	published = models.BooleanField(default = True)		
 	created = models.DateTimeField(auto_now_add=True)
@@ -50,9 +51,45 @@ class Post2(models.Model):
 		return '%s' % self.title
 	@permalink
 	def get_absolute_url(self):
-		return ("blog_view_post" ,None,{'slug':self.slug})
+        #self.views += 1
+		return ("skyfoot_view_post" ,None,{'slug':self.slug})
+    
+
+class skyfoot_cat(models.Model):
+    name = models.CharField(max_length = 255)
+    slug = models.SlugField(unique=True,max_length=255)
+    def __str__(self):
+        return "%s" % self.name
+    @permalink
+    def get_absolute_url(self):
+        return ("category_view_skyfoot" , None , {'slug':self.slug})
+class skyfoot_post(models.Model):
+    category = models.ForeignKey(skyfoot_cat , on_delete = models.CASCADE , null=True)
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True , max_length = 255)
+    url = models.CharField(max_length = 500)
+    description = models.CharField(max_length = 200)
+    views = models.IntegerField(default = 0)
+    content = models.TextField()
+    published = models.BooleanField(default = True)
+    created = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title
+    @permalink
+    def get_absolute_url(self):
+        return ("skyfoot_view_post" , None,{'slug':self.slug})
 class Meta:
 	ordering = ['-created']
+
+class skyfoot_comment(models.Model):
+    post = models.ForeignKey(skyfoot_post , on_delete = models.CASCADE , null = True)
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    desc = models.TextField(max_length=255)
+    def __str__(self):
+        return '%s' % self.name
+    
 class Sub(models.Model):
 	name = models.CharField(max_length=255)
 	email = models.CharField(max_length=255)
@@ -88,5 +125,10 @@ class skyfoot_news(models.Model):
     
     def __str__(self):
         return self.name
+class shirts(models.Model):
+    url = models.CharField(max_length=255)
+    url_post = models.CharField(max_length=255)
+    created = models.DateTimeField(auto_now_add = True)
+    
 
 # Create your models here.

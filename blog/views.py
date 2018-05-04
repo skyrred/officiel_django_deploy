@@ -39,15 +39,18 @@ def skyfoot_index_blog(request):
     categorys = skyfoot_cat.objects.all()
     shirt_posts = shirts.objects.all().order_by('-created')
     num = [x for x in range(int(shirts.objects.count()))]
-    
-    return render(request,"test_temp.html",{"posts":posts,"categories":categorys,'shirts':shirt_posts,'num':num})
+    return render(request,"maintenance.html",{"posts":posts,"categories":categorys,'shirts':shirt_posts,'num':num})
+    #return render(request,"test_temp.html",{"posts":posts,"categories":categorys,'shirts':shirt_posts,'num':num})
 def skyfoot_view_category(request,slug):
-	categories = get_object_or_404(skyfoot_cat ,slug = slug)
-	categorys = skyfoot_cat.objects.all()
-	#posts = Post.objects.filter(category = categories)
-	posts2 = skyfoot_post.objects.filter(category = categories,published=True).order_by('-created')
-	number = str(Sub.objects.count())
-	return render(request , 'test_temp.html',{'categories':categorys,'posts':posts2})
+    categories = get_object_or_404(skyfoot_cat ,slug = slug)
+    categorys = skyfoot_cat.objects.all()
+    #posts = Post.objects.filter(category = categories)
+    posts2 = skyfoot_post.objects.filter(category = categories,published=True).order_by('-created')
+    number = str(Sub.objects.count())
+    #return render(request , 'maintenance.html',{'categories':categorys,'posts':posts2})
+    return render(request,'maintenance.html')
+	#return render(request , 'test_temp.html',{'categories':categorys,'posts':posts2})
+    
 
 def get_data(post):
     categorys = skyfoot_cat.objects.all()
@@ -204,4 +207,5 @@ def skyfoot_index(request):
     new = skyfoot_news.objects.all().order_by('created')[0:3]
     #categories = get_object_or_404(category ,slug = "world-cup")
     posts = skyfoot_post.objects.filter(published=True).order_by('created')[0:3]
-    return render(request,"skyfoot_index.html",{"news":new,"posts":posts})
+    return render(request,"maintenance.html",{"news":new,"posts":posts})
+    #return render(request,"skyfoot_index.html",{"news":new,"posts":posts})

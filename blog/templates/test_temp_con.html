@@ -272,7 +272,7 @@
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="https://www.instagram.com/skyfoot18/"><span class="fa fa-instagram"> Instagram</span></a></li>
-            <li><a href="https://www.facebook.com/newsofworldfootball/"><span class="fa fa-facebook"> Facebook</span></a></li>
+            <li><a href="https://www.facebook.com/Skyfoot18/"><span class="fa fa-facebook"> Facebook</span></a></li>
             <li><a href="https://www.youtube.com/user/aymane440"><span class="fa fa-youtube"> Youtube</span></a></li>
               <li><a href="https://paypal.me/Jabnati"><span class="fa fa-paypal"> Paypal</span></a></li> 
           </ul>
@@ -293,7 +293,7 @@
 <div class="jumbotron text-center">
     <div class="row">
         <div class="col-sm-4">
-            <img src="https://i.imgur.com/Aw43BaA.jpg" style="width:75%;height:200px;">
+            <img src="https://i.imgur.com/daohQsl.png" style="width:75%;height:200px;">
             
         </div>
         <div class="col-sm-8">
@@ -449,7 +449,7 @@
                     <h2 class="text-center" style="color:#db2824;">Follow Us</h2>
                     <center>
                     <a href="https://www.instagram.com/skyfoot18/#" class="fa fa-instagram" title="Visit our Instagram" style="padding:25px;" data-toggle="tooltip"></a>
-    <a href="https://www.facebook.com/newsofworldfootball/" class="fa fa-facebook" title="Visit our facebook page" style="padding:25px;" data-toggle="tooltip"></a>
+    <a href="https://www.facebook.com/Skyfoot18/" class="fa fa-facebook" title="Visit our facebook page" style="padding:25px;" data-toggle="tooltip"></a>
     <a href="https://www.youtube.com/user/aymane440" class="fa fa-youtube" title="Visit our youtube channel" style="padding:25px;" data-toggle="tooltip"></a>
     <a href="https://paypal.me/Jabnati" class="fa fa-paypal" title="Donate us to continue" style="padding:25px;" data-toggle="tooltip"></a></center>
                 </div>
@@ -494,9 +494,11 @@
             </div> 
             <div class="row">
                 <div class="form col-sm-12" dir="rtl" lang="ar"  >
-                    <form action="http://127.0.0.1:8000/send/result/" method="get" ><!--{%csrf_token%}-->
+                    <form action="{{post.get_absolute_url}}" method="post" >
+                        
                         <div class="row">
                             <div class="col-md-4"></div>
+                            {% csrf_token %}
     <div class="col-md-8">
       <div class="row">
         <div class="col-sm-6 form-group">

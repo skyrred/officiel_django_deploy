@@ -330,7 +330,7 @@
           <h4><span class="glyphicon glyphicon-lock"></span> Subscribe</h4>
         </div>
         <div class="modal-body">
-          <form role="form" action="http://127.0.0.1:8000/subscribe/" method="post">{%csrf_token%}
+          <form role="form" action="/subscribe/" method="get">
               <div class="form-group">
               <label for="name"><span class="glyphicon glyphicon-user"></span> Name</label>
               <input type="text" name="name" class="form-control" id="name" placeholder="Enter name">
@@ -367,7 +367,7 @@
           <h4><span class="glyphicon glyphicon-lock"></span> Search Bar</h4>
         </div>
         <div class="modal-body">
-          <form role="form" action="http://127.0.0.1:8000/search/" method="get">
+          <form role="form" action="/search/" method="get">
             <div class="form-group text-right">
               <label dir="rtl" lang="ar"  for="email"><span class="glyphicon glyphicon-search"></span> ابحث عن شئ معين</label>
               <input dir="rtl" lang="ar" type="text" name="search" class="form-control" id="email" placeholder="اكتب...">

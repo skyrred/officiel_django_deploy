@@ -331,7 +331,7 @@
           <h4><span class="glyphicon glyphicon-lock"></span> Subscribe</h4>
         </div>
         <div class="modal-body">
-          <form role="form" action="http://127.0.0.1:8000/subscribe/" method="post">{%csrf_token%}
+          <form role="form" action="/subscribe/" method="get">
               <div class="form-group">
               <label for="name"><span class="glyphicon glyphicon-user"></span> Name</label>
               <input type="text" name="name" class="form-control" id="name" placeholder="Enter name">

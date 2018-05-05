@@ -139,9 +139,9 @@ def view_category(request,slug):
 	number = str(Sub.objects.count())
 	return render(request , 'blog.html',{'category':categorys,'posts':posts,'posts2':posts2,'num':number})
 def subscribe(request):
-	if (request.method == 'POST'):
-		name = request.POST.get('name',None)
-		email = request.POST.get('email',None)
+	if (request.method == 'GET'):
+		name = request.GET.get('name',None)
+		email = request.GET.get('email',None)
 		q = Sub(name = name , email=email)
 		q.save()
 		file = open("maillist.txt","a")

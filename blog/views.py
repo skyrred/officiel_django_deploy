@@ -1,9 +1,9 @@
 from django.shortcuts import render_to_response ,render,get_object_or_404,redirect
-from blog.models import Post,Post2,category,Sub,comment1,comment2,app_user,skyfoot_news,skyfoot_cat,skyfoot_post,skyfoot_comment,shirts
-import webbrowser
+from blog.models import *
 import smtplib as p
 from django.core.files import File
 import random
+
 
 
 def index(request):
@@ -34,12 +34,32 @@ def view_blog_post(request , slug):
 		#return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':count})
 	#else:
 	return render(request,'testpost.html',{'post':post,'comment':comment , 'posts':posts})
+
+
+
 def skyfoot_index_blog(request):
     posts = skyfoot_post.objects.filter(published = True).order_by('-created')
+    thread_posts = skyfoot_post.objects.filter(published = True).order_by('-views')
+    results =  match_results.objects.all().order_by('-date')
+    if len(posts) > 10:
+        posts = skyfoot_post.objects.filter(published = True).order_by('-created')[10]
+    if len(thread_posts) > 6:
+        thread_posts = skyfoot_post.objects.filter(published = True).order_by('-views')[6]
     categorys = skyfoot_cat.objects.all()
     shirt_posts = shirts.objects.all().order_by('-created')
     num = [x for x in range(int(shirts.objects.count()))]
-    return render(request,"maintenance.html",{"posts":posts,"categories":categorys,'shirts':shirt_posts,'num':num})
+    post_num = [x for x in range(len(thread_posts))]
+    results_num = [x for x in range(int(match_results.objects.count()))]
+    return render(request,"maintenance.html",{"posts":posts,
+    	"categories":categorys,
+    	'shirts':shirt_posts,
+    	'num':num,
+    	"thread_posts":thread_posts,
+    	"post_num":post_num,
+    	"results":results,
+    	"results_num":results_num,
+
+    	})
     #return render(request,"test_temp.html",{"posts":posts,"categories":categorys,'shirts':shirt_posts,'num':num})
 def skyfoot_view_category(request,slug):
     categories = get_object_or_404(skyfoot_cat ,slug = slug)
@@ -65,24 +85,25 @@ def get_data(post):
         'categories':categorys
     }
     return data
-def check_comment(request):
-    if (request.method == 'POST'):
-        name = request.POST.get('name',None)
-        if (len(name)!=0):
-            email = request.POST.get('name',None)
-            cmnt = request.POST.get('comment',None)
-            c = post.skyfoot_comment_set.create(name=name,email=email,desc=cmnt)
-            c.save()
+def check_comment(request,post):
+    if (request.method == 'GET'):
+        name = request.GET.get('name',None)
+        if name != None:
+            if (len(name)!=0):
+                email = request.GET.get('name',None)
+                cmnt = request.GET.get('comment',None)
+                c = post.skyfoot_comment_set.create(name=name,email=email,desc=cmnt)
+                c.save()
     
 #post = get_object_or_404(skyfoot_post, slug = slug)
 def view_post_2(request , slug):
     post = get_object_or_404(skyfoot_post,slug=slug)
     post.views += 1
     post.save()
-    check_comment(request)
+    check_comment(request,post)
     data_dic = get_data(post)
     
-    return render_to_response('test_temp_con.html',data_dic)
+    return render_to_response('maintenance.html',data_dic)
     
     #categorys = skyfoot_cat.objects.all()
 	#comment = post.comment2_set.all()
@@ -207,5 +228,5 @@ def skyfoot_index(request):
     new = skyfoot_news.objects.all().order_by('created')[0:3]
     #categories = get_object_or_404(category ,slug = "world-cup")
     posts = skyfoot_post.objects.filter(published=True).order_by('created')[0:3]
-    return render(request,"maintenance.html",{"news":new,"posts":posts})
+    return render(request,"skyfoot_index.html",{"news":new,"posts":posts})
     #return render(request,"skyfoot_index.html",{"news":new,"posts":posts})

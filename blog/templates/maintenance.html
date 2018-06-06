@@ -493,23 +493,23 @@
                 var hour_now = now.getHours();
                 var min_now = now.getMinutes();
                 if (hour_now == 0 && min_now == 0){
-                    remaining_days = date;
+                    remaining_days = date-day;
                     remaining_hours =0;
                     remaining_mins =0;
                    setdata(remaining_days,remaining_hours,remaining_mins);
                 }else if (hour_now==0 && min_now != 0){
-                    remaining_days = date-1;
+                    remaining_days = date-1-day;
                     remaining_hours = 23;
                     remaining_mins = 60-min_now;
                     setdata(remaining_days,remaining_hours,remaining_mins);
                     
                 }else if (hour_now != 0 && min_now == 0){
-                    remaining_days = date-1;
+                    remaining_days = date-1-day;
                     remaining_hours = 24 - hour_now;
                     remaining_mins = 0;
                     setdata(remaining_days,remaining_hours,remaining_mins);
                 }else{
-                    remaining_days = date-1;
+                    remaining_days = date-1-day;
                     remaining_hours = 23 - hour_now;
                     remaining_mins = 60-min_now;
                     setdata(remaining_days,remaining_hours,remaining_mins);

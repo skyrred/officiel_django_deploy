@@ -400,30 +400,32 @@
                     {%endfor%}
                 </div>
                 <br>
-                <div style="background-color: #333;">
+                <div >
                     <h2 style="background-color:#921022;width:100%;padding:5px;color:white;margin:0px;" class="text-center" dir="rtl" lang="ar">الاكثر قراءة</h2>
                     <div>
                         {%for post in thread_posts%}
-                        <div dir="rtl" lang="ar" style="height:350px;overflow: auto;border-bottom:1px solid #db2824;padding: 25px;">
+                        <div dir="rtl" lang="ar" style="height:350px;overflow: auto;border-bottom:1px solid #db2824;padding: 25px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
                             <a href="{{post.get_absolute_url}}"><img src="{{post.url}}" style="width:100%;height:200px;border-radius: 10px;"></a>
-                            <a href="{{post.get_absolute_url}}"  class="cat-a"><h2>{{post.title}}</h2></a>
+                            <a href="{{post.get_absolute_url}}"  class="cat-a" style="color:#333;"><h2>{{post.title}}</h2></a>
                         
                         </div>
+                        <br>
                         {%endfor%}
                     
                     
                     </div>
                 </div>
                 <br><br>
-                <div style="background-color: #333;">
+                <div >
                     <h2 style="background-color:#921022;width:100%;padding:5px;color:white;margin:0px;" class="text-center" dir="rtl" lang="ar">احدث المواضيع</h2>
                     <div>
                         {%for post in new_posts%}
-                        <div dir="rtl" lang="ar" style="height:350px;overflow: auto;border-bottom:1px solid #db2824;padding: 25px;">
+                        <div dir="rtl" lang="ar" style="height:350px;overflow: auto;border-bottom:1px solid #db2824;padding: 25px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
                             <a href="{{post.get_absolute_url}}"><img src="{{post.url}}" style="width:100%;height:200px;border-radius: 10px;"></a>
-                            <a href="{{post.get_absolute_url}}"  class="cat-a"><h2>{{post.title}}</h2></a>
+                            <a href="{{post.get_absolute_url}}"  class="cat-a" style="color:#333;"><h2>{{post.title}}</h2></a>
                         
                         </div>
+                        <br>
                         {%endfor%}
                     
                     </div>
@@ -494,11 +496,11 @@
             </div> 
             <div class="row">
                 <div class="form col-sm-12" dir="rtl" lang="ar"  >
-                    <form action="{{post.get_absolute_url}}" method="post" >
+                    <form action="{{post.get_absolute_url}}" method="get" >
                         
                         <div class="row">
                             <div class="col-md-4"></div>
-                            {% csrf_token %}
+                            
     <div class="col-md-8">
       <div class="row">
         <div class="col-sm-6 form-group">
@@ -523,9 +525,10 @@
                 <br>
                 <div class="col-sm-12">
                     <div class="row">
-                        <div class="col-sm-7"></div>
                         {%for com in comment%}
-                    <div class="text-right comments col-sm-5" dir="rtl" lang="ar">
+                        <div class="col-sm-7"></div>
+                        
+                    <div class="text-right comments col-sm-5" dir="rtl" lang="ar" style="margin-bottom: 15px;">
                         <div class="row">
                             <div class="col-sm-7">{{com.email}}</div>
                             <div class="col-sm-5">{{com.name}}</div>

@@ -1,6 +1,41 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.db.models import permalink
+
+
+
+
+
+class match_results(models.Model):
+	date = models.DateTimeField()
+	match1 = models.CharField(max_length = 120 , null = True)
+	country1 = models.CharField(max_length = 120 , null = True)
+	result_1 = models.CharField(max_length = 120 , null = True)
+	country2 = models.CharField(max_length = 120 , null = True)
+	match2 = models.CharField(max_length = 120 , null = True)
+	country3 = models.CharField(max_length = 120 , null = True)
+	result_2 = models.CharField(max_length = 120 , null = True)
+	country4 = models.CharField(max_length = 120 , null = True)
+	match3 = models.CharField(max_length = 120 , null = True)
+	country5 = models.CharField(max_length = 120 , null = True ) 
+	result_3 = models.CharField(max_length = 120 , null = True)
+	country6 = models.CharField(max_length = 120 , null = True)
+	match4 = models.CharField(max_length = 120 , null = True)
+	country7 = models.CharField(max_length = 120 , null = True)
+	result_4 = models.CharField(max_length = 120 , null = True)
+	country8 = models.CharField(max_length = 120 , null = True)
+	match5 = models.CharField(max_length = 120 , null = True)
+	country9 = models.CharField(max_length = 120 , null = True)
+	result_5 = models.CharField(max_length = 120 , null = True)
+	country10 = models.CharField(max_length = 120 , null = True)
+
+	def __str__(self):
+		return str(self.date)
+
+class flags(models.Model):
+	country_name = models.CharField(max_length = 120)
+	flag_url = models.CharField(max_length = 250)
+
 class category(models.Model):
 	name = models.CharField(max_length = 255 , )
 	slug = models.SlugField(unique = True, max_length=255 , )

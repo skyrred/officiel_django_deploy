@@ -228,5 +228,5 @@ def skyfoot_index(request):
     new = skyfoot_news.objects.all().order_by('created')[0:3]
     #categories = get_object_or_404(category ,slug = "world-cup")
     posts = skyfoot_post.objects.filter(published=True).order_by('created')[0:3]
-    return render(request,"skyfoot_index.html",{"news":new,"posts":posts})
+    return render(request,"maintenance.html",{"news":new,"posts":posts})
     #return render(request,"skyfoot_index.html",{"news":new,"posts":posts})

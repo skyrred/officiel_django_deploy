@@ -501,17 +501,44 @@
                     remaining_days = date-1-day;
                     remaining_hours = 23;
                     remaining_mins = 60-min_now;
+                    if (remaining_days < 0remaining_hours < 0 ){
+                        remaining_days = 0;
+                    }
+                    if (remaining_hours < 0){
+                        remaining_hours = 0;
+                    }
+                    if ( remaining_mins < 0 ){
+                        remaining_mins = 0;
+                    }
                     setdata(remaining_days,remaining_hours,remaining_mins);
                     
                 }else if (hour_now != 0 && min_now == 0){
                     remaining_days = date-1-day;
                     remaining_hours = 24 - hour_now;
                     remaining_mins = 0;
+                    if (remaining_days < 0remaining_hours < 0 ){
+                        remaining_days = 0;
+                    }
+                    if (remaining_hours < 0){
+                        remaining_hours = 0;
+                    }
+                    if ( remaining_mins < 0 ){
+                        remaining_mins = 0;
+                    }
                     setdata(remaining_days,remaining_hours,remaining_mins);
                 }else{
                     remaining_days = date-1-day;
                     remaining_hours = 23 - hour_now;
                     remaining_mins = 60-min_now;
+                    if (remaining_days < 0remaining_hours < 0 ){
+                        remaining_days = 0;
+                    }
+                    if (remaining_hours < 0){
+                        remaining_hours = 0;
+                    }
+                    if ( remaining_mins < 0 ){
+                        remaining_mins = 0;
+                    }
                     setdata(remaining_days,remaining_hours,remaining_mins);
                 }
                 

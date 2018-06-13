@@ -242,6 +242,41 @@
         .post_container a:hover{
             color:white;
         }
+        .product img{
+            width:100%;
+            height:200px;
+            cursor: pointer;
+        }
+        
+        
+        
+        .product:hover > img{
+            filter: opacity(30%);
+        }
+        .product > center button {
+            filter:opacity(0%);
+            padding: 10px;
+            border:3px solid #921022;
+            background-color: #921022b5;
+            width:45%;
+            position: absolute;
+            top:40%;
+            left:28%;
+            font-size: 15px;
+            color:#e0e0e0;
+        }
+        .product:hover > center button{
+            filter: opacity(100%);
+            text-decoration: none;
+        }
+         
+        .news{
+            font-size: 15px;
+        }
+        .news a{
+            padding:15px;
+            margin:0px 10px 0px 10px;
+        }
         
   </style>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -402,44 +437,11 @@
     </div>
   </div>
     
+
     
-    <div class="container-fluid bg-1" >
-        <center>
-        <div id="myCarousel2" class="carousel slide" data-ride="carousel" style="width: 60%;">
-            <h1 class="text-center" style="color:#db2824;" dir="rtl" lang="ar">جديد منتجاتنا</h1>
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-      {%for x in num%}
-      {%if x == 0 %}
-        <li data-target="#myCarousel2" data-slide-to="{{x}}" class="active"></li>
-      {%else%}
-    <li data-target="#myCarousel2" data-slide-to="{{x}}"></li>
-        {%endif%}
-      {%endfor%}
-  </ol>
+  
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-      {% load define_action %}
-      {% define 0 as num %}
-      {%for shirt in shirts%}
-      {%if num == 0%}
-    <div class="item active">
-      <a href="{{shirt.url_post}}"><img src="{{shirt.url}}" alt="Los Angeles" style="height:250px;wight:250px;"></a>
-    </div>
-        {%else%}
-    <div class="item">
-        <a href="{{shirt.url_post}}"><img src="{{shirt.url}}" alt="Chicago" style="height:250px;wight:250px;"></a>
-    </div>
-      {%endif%}
-      
-      {% define 1 as num %}
-      
-      {%endfor%}
-      
-  </div>
-
-  <!-- Left and right controls -->
+  <!-- Left and right controls 
   <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
     <span class="sr-only">Previous</span>
@@ -472,10 +474,39 @@
     <br>
     </div>
     <br>
-    
+
+#ffffffcf;
+الأخبار
+المقالات
+المراكز
+المباريات
+القناة
 </div>-->
     
-    <div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/skyfoot/blog/">Russia World Cup 2018</a>
+    </div>
+      <div class="collapse navbar-collapse" id="myNavbar1">
+    
+    <ul class="nav navbar-nav navbar-right news" dir="rtl" lang="ar">
+        <li><a href="#"><span class="	glyphicon glyphicon-facetime-video"></span>  القناة </a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-calendar"></span> المباريات</a></li>
+        <li><a href="#"><span class="	glyphicon glyphicon-list-alt"></span> المراكز</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-edit"></span> المقالات</a></li>
+      <li><a href="#"><span class="	glyphicon glyphicon-exclamation-sign"></span> الأخبار</a></li>
+    </ul>
+      </div>
+  </div>
+</nav>
+    
+       <div class="container-fluid"> 
         <div class="row">
             <div class="col-sm-4 ">
             </div>
@@ -493,7 +524,100 @@
                 
             </div>
         </div>
+           <center>
+           <div id="myCarousel2" class="carousel slide" data-ride="carousel" style="width: 100%;">
+            <h1 class="text-center" style="color:#db2824;" dir="rtl" lang="ar">جديد منتجاتنا</h1>
+  <!-- Indicators -->
+  <ol class="carousel-indicators" >
+      {%for x in num%}
+      {%if x == 0 %}
+        <li data-target="#myCarousel2" data-slide-to="{{x}}" class="active"></li>
+      {%else%}
+    <li data-target="#myCarousel2" data-slide-to="{{x}}"></li>
+        {%endif%}
+      {%endfor%}
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+      {% load define_action %}
+      {% define 0 as iter_num %}
+      {%for shirt in shirts%}
+      {%if iter_num == 0%}
+    <div class="item active">
+      <div style="margin:0px 70px 70px 70px;">
+            <div class="row" >
+                
+                {% for single_shirt in shirt %}
+            
+                <div class="col-sm-4">
+                    <div class="product">
+                        <img src="{{single_shirt.url}}">
+                        <center>
+                        <!--<a href="https://www.google.com" data-toggle="modal" data-target="#shirtModal{{single_shirt.num_id}}" >Show More</a>-->
+                            <button type="button" data-toggle="modal" data-target="#shirtModal{{single_shirt.num_id}}">show more</button>
+                            </center>
+                        
+                    </div>
+                
+                </div>
+                {% endfor %}
+                     
+                     </div>
+           
         
+        </div>
+    </div>
+        {%else%}
+    <div class="item">
+        <div style="margin:0px 70px 70px 70px;">
+            <div class="row" >
+                
+                {% for single_shirt in shirt %}
+            
+                <div class="col-sm-4">
+                    <div class="product">
+                        <img src="{{single_shirt.url}}">
+                        <center>
+                        <button type="button" data-toggle="modal" data-target="#shirtModal{{single_shirt.num_id}}">show more</button>
+                            </center>
+                        
+                    </div>
+                
+                </div>
+                {% endfor %}
+                     
+                     </div>
+           
+        
+        </div>
+    </div>
+      {%endif%}
+      
+      {% define 1 as iter_num %}
+      
+      {%endfor%}
+      
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</center>
+        
+            
+            
+        
+           
+           <br>
+                <br>
         <div class="row">
             <div class="col-sm-4 ">
                 <div style="background-color: #33333321;" class="cat-cont">
@@ -540,7 +664,7 @@
             <td></td>
         </tr>
       <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country1}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country1%}" style="width:32px;height:32px;"> {{result.country1}} </td>
         <td>{{result.result_1}}</td>
         <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country2}}</td>
       </tr>
@@ -564,6 +688,7 @@
         <td>{{result.result_3}}</td>
         <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country6}}</td>
       </tr>
+        {% if result.match4 != "None"  %}
         <tr>
             <td></td>
             <td class="text-center">{{result.match4}}</td>
@@ -574,6 +699,7 @@
         <td>{{result.result_4}}</td>
         <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country8}}</td>
       </tr>
+        {%endif%}
         
         {% if result.match5 != "None"  %}
         <tr>
@@ -589,6 +715,7 @@
       {% endif  %}
     </tbody>
   </table>
+        <br>
     </div>
         {%else%}
     <div class="item">
@@ -632,6 +759,7 @@
         <td>{{result.result_3}}</td>
         <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country6}}</td>
       </tr>
+        {% if result.match4 != "None"  %}
         <tr>
             <td></td>
             <td class="text-center">{{result.match4}}</td>
@@ -642,7 +770,7 @@
         <td>{{result.result_4}}</td>
         <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country8}}</td>
       </tr>
-        
+        {%endif%}
         {% if result.match5 != "None"  %}
         <tr>
             <td></td>
@@ -657,6 +785,7 @@
       {% endif  %}
     </tbody>
   </table>
+        <br>
     </div>
       {%endif%}
       
@@ -676,6 +805,144 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<!--  ranking -->
+        
+                    
+<div>
+    <h1 class="text-center" style="color:#db2824;" dir="rtl" lang="ar">ترتيب الفرق</h1>
+    <br>
+    <div id="myCarousel5" class="carousel slide" data-ride="carousel" style="width: 100%;">
+            <!--<h1 class="text-center" style="color:#db2824;" dir="rtl" lang="ar">جديد منتجاتنا</h1>-->
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+      {%for x in groups_num%}
+      {%if x == 0 %}
+        <li data-target="#myCarousel5" data-slide-to="{{x}}" class="active"></li>
+      {%else%}
+    <li data-target="#myCarousel5" data-slide-to="{{x}}"></li>
+        {%endif%}
+      {%endfor%}
+  </ol>
+{% load define_action %}
+      {% define 0 as groups_num %}
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+      
+      {%for group_cont in groups_dict %}
+      {%if groups_num == 0%}
+      
+    <div class="item active">
+        {% define 0 as team_count %}
+        {%for team in group_cont %}
+        {% if team_count == 0 %}
+      <h4 class="text-center" style="color:#db2824;background-color: #33333321;">{{team.name}}</h4>
+    <table class="table" dir="rtl" lang="ar">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th class="text-center"></th>
+            <th></th>
+            <th></th>
+        </tr>
+      <tr >
+        <th class="text-center">الدولة</th>
+        <th class="text-center">فوز</th>
+        <th class="text-center">خسارة</th>
+          <th class="text-center">تعادل</th>
+          <th class="text-center">النقاط</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% else %}
+      <tr class="text-center">
+        <td>{{team.country}}</td>
+        <td>{{team.win}}</td>
+        <td>{{team.Lose}}</td>
+          <td>{{team.Tie}}</td>
+          <td>{{team.Points}}</td>
+      </tr>
+        {%endif%}
+        {% define 1 as team_count %}
+        {%endfor%}
+    
+    </tbody>
+  </table>
+        <br>
+    </div>
+      
+      {%else%}
+      
+    <div class="item">
+        {% define 0 as team_count %}
+        {%for team in group_cont %}
+        {% if team_count == 0 %}
+        <h4 class="text-center" style="color:#db2824;background-color: #33333321;">{{team.name}}</h4>
+    <table class="table" dir="rtl" lang="ar">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th class="text-center"></th>
+            <th></th>
+            <th></th>
+        </tr>
+      <tr >
+        <th class="text-center">الدولة</th>
+        <th class="text-center">فوز</th>
+        <th class="text-center">خسارة</th>
+          <th class="text-center">تعادل</th>
+          <th class="text-center">النقاط</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% else %}
+      <tr class="text-center">
+        <td>{{team.country}}</td>
+        <td>{{team.win}}</td>
+        <td>{{team.Lose}}</td>
+          <td>{{team.Tie}}</td>
+          <td>{{team.Points}}</td>
+      </tr>
+        {%endif%}
+        {% define 1 as team_count %}
+        {%endfor%}
+    
+    </tbody>
+  </table>
+        <br>
+        
+    </div>
+      {%endif%}
+      
+      {% define 1 as groups_num %}
+      
+      {%endfor%}
+      
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel5" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel5" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    
+                    
+                    
+                    
+                    </div>
+                    
+                    
+
+                    
+                    
+<!-- -->
                     
                 
                 <div>
@@ -776,7 +1043,53 @@
         </div>
     </div>
 
-
+{%for shirt in shirt_posts %}
+<!-- order Modal -->
+  <div class="modal fade" id="shirtModal{{shirt.num_id}}" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">x</button>
+          <h4 class="modal-title">{{shirt.title}}</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+          <div class="col-sm-5">
+          	<img src="{{shirt.url}}" style="width:100%;height:250px;">
+          </div>
+          <div class="col-sm-7">
+          	<h4 style="border-bottom:3px solid #333;">
+            	{{shirt.description|safe}}
+            </h4>
+            
+          	<div class="orderin">
+            <h4 style="color:#db2824;">{{shirt.price}}$</h4>
+            <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color:#db2824;">order
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Call Us</a></li>
+    <li><a href="#">Order via mail</a></li>
+    
+  </ul>
+</div>
+            </div>
+            
+          </div>
+          
+          
+          	
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button><a href="{{shirt.url_post}}">Check in our shop</a></button>
+        </div>
+      </div>
+      
+      </div></div>
+      {%endfor%}
 
 <!-- Footer -->
 <footer class="text-center">

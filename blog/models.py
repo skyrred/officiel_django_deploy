@@ -5,6 +5,25 @@ from django.db.models import permalink
 
 
 
+class group(models.Model):
+	name = models.CharField(max_length = 250)
+	rank = models.IntegerField(default = 0)
+
+	def __str__(self):
+		return self.name
+
+class team(models.Model):
+	group = models.ForeignKey(group , on_delete = models.CASCADE)
+	country = models.CharField(max_length = 150)
+	win = models.IntegerField()
+	Lose = models.IntegerField()
+	Tie = models.IntegerField()
+	Points = models.IntegerField()
+
+	def __str__(self):
+		return self.country
+
+
 
 class match_results(models.Model):
 	date = models.DateTimeField()
@@ -29,12 +48,19 @@ class match_results(models.Model):
 	result_5 = models.CharField(max_length = 120 , null = True)
 	country10 = models.CharField(max_length = 120 , null = True)
 
+
 	def __str__(self):
 		return str(self.date)
+    
 
 class flags(models.Model):
 	country_name = models.CharField(max_length = 120)
 	flag_url = models.CharField(max_length = 250)
+
+	def __str__(self):
+		return self.country_name
+		
+    
 
 class category(models.Model):
 	name = models.CharField(max_length = 255 , )
@@ -163,7 +189,31 @@ class skyfoot_news(models.Model):
 class shirts(models.Model):
     url = models.CharField(max_length=255)
     url_post = models.CharField(max_length=255)
+    title = models.CharField(max_length=255 , default = " ")
+    description = models.CharField(max_length = 255 , default = " ")
+    price = models.FloatField(default=0)
     created = models.DateTimeField(auto_now_add = True)
+    num_id = models.IntegerField(default = 0)
     
+
+class match_dates(models.Model):
+	date = models.DateField()
+	idd = models.IntegerField()
+
+
+	def __str__(self):
+		return str(self.idd)
+
+
+
+class all_matches(models.Model):
+	match_date = models.ForeignKey(match_dates , on_delete = models.CASCADE , default = None)
+	country_1 = models.CharField(max_length=100 , default = None)
+	result = models.CharField(max_length=100 , default = None)
+	country_2 = models.CharField(max_length=100 , default = None)
+
+	def __str__(self):
+		title = self.country_1 + "||" + self.country_2
+		return title
 
 # Create your models here.

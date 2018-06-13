@@ -43,6 +43,7 @@ urlpatterns = [
     url(r'^skyfoot/blog/$',skyfoot_index_blog,name='skyfoot_blog'),
     url(r'^skyfoot/categories/(?P<slug>[^\.]+)./$',skyfoot_view_category, name='category_view_skyfoot'),
     url(r'^skyfoot/blog/view/(?P<slug>[^\.]+)/$',view_post_2,name='skyfoot_view_post'),
+    url(r'^skyfoot/blog/tables/$',showtables,name="tables"),
     #url(r'^(?P<slug>[\w\-]+)/$',view_post, name = "blog_post"),
     #url(r'^blog/view/show/(?P<slug>[^\.]+).html',post,name='blog_pst'),
 

@@ -93,7 +93,7 @@ def skyfoot_index_blog(request):
     results_num = [x for x in range(int(match_results.objects.count()))]
     groups_num = [x for x in range(int(group.objects.count()))]
     #print(groups_dict)
-    return render(request,"maintenance.html",{"posts":posts,
+    return render(request,"test_temp.html",{"posts":posts,
     	"categories":categorys,
     	'shirts':shirt_list,
     	'num':num,
@@ -115,7 +115,7 @@ def skyfoot_view_category(request,slug):
     posts2 = skyfoot_post.objects.filter(category = categories,published=True).order_by('-created')
     number = str(Sub.objects.count())
     #return render(request , 'maintenance.html',{'categories':categorys,'posts':posts2})
-    return render(request,'maintenance.html')
+    return render(request,'test_temp_con.html')
 	#return render(request , 'test_temp.html',{'categories':categorys,'posts':posts2})
     
 
@@ -275,7 +275,7 @@ def skyfoot_index(request):
     new = skyfoot_news.objects.all().order_by('created')[0:3]
     #categories = get_object_or_404(category ,slug = "world-cup")
     posts = skyfoot_post.objects.filter(published=True).order_by('created')[0:3]
-    return render(request,"maintenance.html",{"news":new,"posts":posts})
+    return render(request,"skyfoot_index.html",{"news":new,"posts":posts})
     #return render(request,"skyfoot_index.html",{"news":new,"posts":posts})
 
 
@@ -284,7 +284,7 @@ def showtables(request):
 	dates = match_dates.objects.all().order_by("-date")
 
 
-	return render(request,"maintenance.html",{
+	return render(request,"tables.html",{
 		"all_groups":all_groups,
 		"dates" : dates,
 		})

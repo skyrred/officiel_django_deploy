@@ -110,13 +110,71 @@ def skyfoot_index_blog(request):
     #return render(request,"test_temp.html",{"posts":posts,"categories":categorys,'shirts':shirt_posts,'num':num})
 def skyfoot_view_category(request,slug):
     categories = get_object_or_404(skyfoot_cat ,slug = slug)
+    posts = skyfoot_post.objects.filter(published=True,category=categories).order_by('-created')
+    thread_posts = skyfoot_post.objects.filter(published = True).order_by('-views')
+    results_data =  match_results.objects.all().order_by('-date')
+    day = num_date.day
+    results = []
+    for res in results_data:
+    	date_val = res.date.day
+    	if int(date_val) == int(day):
+    		results.append(res)
+    	else:
+    		pass
+    print(results)
+
+    
+    groups = []
+    groups.append(group.objects.filter(rank=1))
+    groups_dict = []
+    for each_group in groups:
+    	team_list = []
+    	team_list.append(each_group)
+    	teams = team.objects.filter(group = each_group).order_by('-Points')
+    	for each_team in teams:
+    		team_list.append(each_team)
+    	
+    	groups_dict.append(team_list)
+
+    if len(posts) > 10:
+        posts = skyfoot_post.objects.filter(published=True,category=categories).order_by('-created')[10]
+    if len(thread_posts) > 6:
+        thread_posts = skyfoot_post.objects.filter(published = True).order_by('-views')[6]
     categorys = skyfoot_cat.objects.all()
-    #posts = Post.objects.filter(category = categories)
-    posts2 = skyfoot_post.objects.filter(category = categories,published=True).order_by('-created')
-    number = str(Sub.objects.count())
-    #return render(request , 'maintenance.html',{'categories':categorys,'posts':posts2})
-    return render(request,'test_temp.html')
-	#return render(request , 'test_temp.html',{'categories':categorys,'posts':posts2})
+    shirt_posts = shirts.objects.all().order_by('-created')
+    shirt_list = []
+    each_shirt = []
+    for shirt in shirt_posts:
+    	each_shirt.append(shirt)
+    	if int(shirt.num_id) % 3 == 0:
+    		shirt_list.append(each_shirt)
+    		each_shirt = []
+    if len(each_shirt) != 0:
+    	shirt_list.append(each_shirt)
+    	each_shirt = []
+
+    print(shirt_list)
+    #print(len(shirt_list))
+    num = [x for x in range(int(len(shirt_list)))]
+    print(num)
+    post_num = [x for x in range(len(thread_posts))]
+    results_num = [x for x in range(int(match_results.objects.count()))]
+    groups_num = [x for x in range(int(group.objects.count()))]
+    #print(groups_dict)
+    return render(request,"test_temp.html",{"posts":posts,
+    	"categories":categorys,
+    	'shirts':shirt_list,
+    	'num':num,
+    	"thread_posts":thread_posts,
+    	"post_num":post_num,
+    	"results":results,
+    	"results_num":results_num,
+    	"groups_dict" : groups_dict,
+    	"groups_num":groups_num,
+    	"shirt_posts":shirt_posts,
+    	
+
+    	})
     
 
 def get_data(post):

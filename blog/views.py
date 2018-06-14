@@ -173,10 +173,10 @@ def post(request,slug):
 def about(request):
 	return render(request,'about.html')
 def sending(request):
-	if (request.method == 'POST'):
-		name = request.POST.get('name',None)
-		about = request.POST.get('email',None)
-		description = request.POST.get('description',None)
+	if (request.method == 'GET'):
+		name = request.GET.get('name',None)
+		about = request.GET.get('email',None)
+		description = request.GET.get('description',None)
 		msg ="""From: From skyteam.work@gmail.com
 To: %r
 MIME-Version: 1.0
@@ -189,7 +189,7 @@ Subject: BUG repport about (%a)
 		server = p.SMTP("smtp.gmail.com",587)
 		server.starttls()
 		server.login("teamsky.work@gmail.com","nefdaaxgeddqxxyv")
-		server.sendmail("skyteam.work@gmail.com","sky.red2212@gmail.com",msg)
+		server.sendmail("teamsky.work@gmail.com","skyfoot18@gmail.com",msg)
         #server.lgoin("teamsky.work@gmail.com","teamskywork123")
         #server.sendmail("skytechno.work@gmail.com","sky.red2212@gmail.com",msg)
 		#server.login("skytechno.work@gmail.com","skytech123")

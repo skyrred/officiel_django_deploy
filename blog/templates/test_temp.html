@@ -324,14 +324,22 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active" >
-        <img src="https://i.imgur.com/jMHvMGB.jpg" alt="New York" width="1200" style="height: 700px;">
+        <img src="https://i.imgur.com/UddVqny.jpg" alt="New York" width="1200" style="height: 700px;">
+        <div class="carousel-caption">
+          <h2 dir="rtl" lang="ar">مرحبا بكم في سكاي فوت</h2>
+          <p dir="rtl" lang="ar">للرياضة طعم اخر !</p>
+        </div>      
+      </div>
+        <div class="item" >
+        <img src="https://i.imgur.com/9wQX0ts.jpg" alt="New York" width="1200" style="height: 700px;">
         <div class="carousel-caption">
           <h2 dir="rtl" lang="ar">مرحبا بكم في سكاي فوت</h2>
           <p dir="rtl" lang="ar">للرياضة طعم اخر !</p>
@@ -438,7 +446,7 @@
   </div>
     
 
-    
+   {% load define_action %}
   
 
   <!-- Left and right controls 
@@ -491,21 +499,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="/skyfoot/blog/">Russia World Cup 2018</a>
+      <a class="navbar-brand" href="https://skyteam.herokuapp.com/skyfoot/blog/">Russia World Cup 2018</a>
     </div>
       <div class="collapse navbar-collapse" id="myNavbar1">
     
     <ul class="nav navbar-nav navbar-right news" dir="rtl" lang="ar">
-        <li><a href="#"><span class="	glyphicon glyphicon-facetime-video"></span>  القناة </a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-calendar"></span> المباريات</a></li>
-        <li><a href="#"><span class="	glyphicon glyphicon-list-alt"></span> المراكز</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-edit"></span> المقالات</a></li>
-      <li><a href="#"><span class="	glyphicon glyphicon-exclamation-sign"></span> الأخبار</a></li>
+        <li><a href="https://www.youtube.com/user/aymane440"><span class="	glyphicon glyphicon-facetime-video"></span>  القناة </a></li>
+        <li><a href="https://skyteam.herokuapp.com/skyfoot/blog/tables/#table2"><span class="glyphicon glyphicon-calendar"></span> المباريات</a></li>
+        <li><a href="https://skyteam.herokuapp.com/skyfoot/blog/tables/#table1"><span class="	glyphicon glyphicon-list-alt"></span> المجموعات</a></li>
+      <li><a href="https://skyteam.herokuapp.com/skyfoot/blog/"><span class="glyphicon glyphicon-edit"></span> المقالات</a></li>
+      <li><a href="https://skyteam.herokuapp.com/skyfoot/blog/"><span class="	glyphicon glyphicon-exclamation-sign"></span> الأخبار</a></li>
     </ul>
       </div>
   </div>
 </nav>
-    
        <div class="container-fluid"> 
         <div class="row">
             <div class="col-sm-4 ">
@@ -1030,7 +1037,7 @@
 			<time datetime="{{post.created|date:'c'}}">
 			{{post.created}}
 			</time>
-            <p dir="ltr">{{post.views}} views</p>
+            
 			</h3>
                         </div>
                     </div>

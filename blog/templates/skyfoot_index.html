@@ -240,18 +240,17 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">  
-        <li><a href="#band"><bold>حول مجموعتنا</bold></a></li>
-        <li><a href="#tour"><bold>اخر اخبارنا</bold></a></li>
-          <li><a href="/skyfoot/blog/">المدونة</a></li>
-          <li><a href="#contact"><bold>تواصل معنا</bold></a></li>
+        <li><a href="https://skyteam.herokuapp.com/skyfoot/#band"><bold>حول مجموعتنا</bold></a></li>
+        <li><a href="https://skyteam.herokuapp.com/skyfoot/#tour"><bold>اخر اخبارنا</bold></a></li>
+          <li><a href="https://skyteam.herokuapp.com/skyfoot/#contact"><bold>تواصل معنا</bold></a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><bold>اكثر</bold>
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="https://www.instagram.com/skyfoot18/"><span class="fa fa-instagram"> Instagram</span></a></li>
-            <li><a href="https://www.facebook.com/newsofworldfootball/"><span class="fa fa-facebook"> Facebook</span></a></li>
+            <li><a href="https://www.facebook.com/Skyfoot18/"><span class="fa fa-facebook"> Facebook</span></a></li>
             <li><a href="https://www.youtube.com/user/aymane440"><span class="fa fa-youtube"> Youtube</span></a></li>
-              <li><a href="https://paypal.me/Jabnati"><span class="fa fa-paypal"> Paypal</span></a></li>  
+              <li><a href="https://paypal.me/Jabnati"><span class="fa fa-paypal"> Paypal</span></a></li> 
           </ul>
         </li>
           <li><a data-toggle="modal" data-target="#search"><span class="glyphicon glyphicon-search" ></span></a></li>
@@ -264,14 +263,22 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active" >
-        <img src="https://i.imgur.com/jMHvMGB.jpg" alt="New York" width="1200" style="height: 700px;">
+        <img src="https://i.imgur.com/UddVqny.jpg" alt="New York" width="1200" style="height: 700px;">
+        <div class="carousel-caption">
+          <h2 dir="rtl" lang="ar">مرحبا بكم في سكاي فوت</h2>
+          <p dir="rtl" lang="ar">للرياضة طعم اخر !</p>
+        </div>      
+      </div>
+        <div class="item" >
+        <img src="https://i.imgur.com/9wQX0ts.jpg" alt="New York" width="1200" style="height: 700px;">
         <div class="carousel-caption">
           <h2 dir="rtl" lang="ar">مرحبا بكم في سكاي فوت</h2>
           <p dir="rtl" lang="ar">للرياضة طعم اخر !</p>
@@ -327,7 +334,7 @@
       <div class="col-sm-4">
         <div class="thumbnail">
           <img src="{{post.url}}" alt="Picture" style="width:400px;height:300px;">
-          <p dir="rtl" lang="ar" style="color:#db2824;"><strong>{{post.title}}</strong></p>
+          <p dir="rtl" lang="ar" style="color:#db2824;overflow: auto;height:45px;"><strong>{{post.title}}</strong></p>
           <button class="btn"><a href="{{post.get_absolute_url}}">See this post</a></button>
         </div>
       </div>
@@ -437,7 +444,7 @@
         <p><span class="glyphicon glyphicon-phone"></span>  0676531866 </p>
       <p><span class="glyphicon glyphicon-envelope"></span>  teamsky.work@gmail.com </p>
     </div>
-      <form action="https://skyteam.herokuapp.com/send/result/" method="post">{%csrf_token%}
+      <form action="https://skyteam.herokuapp.com/send/result/" method="get">
     <div class="col-md-8">
       <div class="row">
         <div class="col-sm-6 form-group">

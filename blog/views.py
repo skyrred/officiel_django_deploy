@@ -339,7 +339,7 @@ def skyfoot_index(request):
 
 def showtables(request):
 	all_groups = group.objects.all().order_by("rank")
-	dates = match_dates.objects.all().order_by("-date")
+	dates = match_dates.objects.all().order_by("date")
 
 
 	return render(request,"tables.html",{

@@ -15,7 +15,7 @@ def get_flag(country = None):
 
 @register.simple_tag
 def get_teams(rank=None):
-	teams = get_object_or_404(group , rank = rank).team_set.all()
+	teams = get_object_or_404(group , rank = rank).team_set.all().order_by("-Points")
 	return teams
 
 @register.simple_tag

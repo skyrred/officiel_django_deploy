@@ -277,6 +277,19 @@
             padding:15px;
             margin:0px 10px 0px 10px;
         }
+        .table_link{
+            font-size: 25px;
+            padding:10px;
+           margin:15px;
+            
+            
+        }
+        .table_link:hover{
+            text-decoration: None;
+            color:#db2824;
+             border-bottom: 3px solid #db2824;
+            
+        }
         
   </style>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -673,28 +686,33 @@
       <tr class="text-center">
         <td dir="rtl" lang="ar"> <img src="{%get_flag result.country1%}" style="width:32px;height:32px;"> {{result.country1}} </td>
         <td>{{result.result_1}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country2}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country2%}" style="width:32px;height:32px;"> {{result.country2}}</td>
       </tr>
+        {% if result.match2 != "None"  %}
         <tr>
             <td></td>
             <td class="text-center">{{result.match2}}</td>
             <td></td>
         </tr>
     <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country3}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country3%}" style="width:32px;height:32px;"> {{result.country3}} </td>
         <td>{{result.result_2}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country4}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country4%}" style="width:32px;height:32px;"> {{result.country4}}</td>
       </tr>
+        
+        {%endif%}
+        {% if result.match3 != "None"  %}
         <tr>
             <td></td>
             <td class="text-center">{{result.match3}}</td>
             <td></td>
         </tr>
         <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country5}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country5%}" style="width:32px;height:32px;"> {{result.country5}} </td>
         <td>{{result.result_3}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country6}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country6%}" style="width:32px;height:32px;"> {{result.country6}}</td>
       </tr>
+        {%endif%}
         {% if result.match4 != "None"  %}
         <tr>
             <td></td>
@@ -702,9 +720,9 @@
             <td></td>
         </tr>
         <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country7}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country7%}" style="width:32px;height:32px;"> {{result.country7}} </td>
         <td>{{result.result_4}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country8}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country8%}" style="width:32px;height:32px;"> {{result.country8}}</td>
       </tr>
         {%endif%}
         
@@ -715,9 +733,9 @@
             <td></td>
         </tr>
         <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country9}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country9%}" style="width:32px;height:32px;"> {{result.country9}} </td>
         <td>{{result.result_5}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country10}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country10%}" style="width:32px;height:32px;"> {{result.country10}}</td>
       </tr>
       {% endif  %}
     </tbody>
@@ -726,7 +744,7 @@
     </div>
         {%else%}
     <div class="item">
-        <h4 class="text-center" style="color:#db2824;background-color: #33333321;">{{result.date}}</h4>
+       <h4 class="text-center" style="color:#db2824;background-color: #33333321;">{{result.date}}</h4>
       <table class="table ">
     <thead>
       <tr>
@@ -742,30 +760,35 @@
             <td></td>
         </tr>
       <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country1}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country1%}" style="width:32px;height:32px;"> {{result.country1}} </td>
         <td>{{result.result_1}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country2}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country2%}" style="width:32px;height:32px;"> {{result.country2}}</td>
       </tr>
+        {% if result.match2 != "None"  %}
         <tr>
             <td></td>
             <td class="text-center">{{result.match2}}</td>
             <td></td>
         </tr>
     <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country3}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country3%}" style="width:32px;height:32px;"> {{result.country3}} </td>
         <td>{{result.result_2}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country4}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country4%}" style="width:32px;height:32px;"> {{result.country4}}</td>
       </tr>
+        
+        {%endif%}
+        {% if result.match3 != "None"  %}
         <tr>
             <td></td>
             <td class="text-center">{{result.match3}}</td>
             <td></td>
         </tr>
         <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country5}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country5%}" style="width:32px;height:32px;"> {{result.country5}} </td>
         <td>{{result.result_3}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country6}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country6%}" style="width:32px;height:32px;"> {{result.country6}}</td>
       </tr>
+        {%endif%}
         {% if result.match4 != "None"  %}
         <tr>
             <td></td>
@@ -773,11 +796,12 @@
             <td></td>
         </tr>
         <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country7}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country7%}" style="width:32px;height:32px;"> {{result.country7}} </td>
         <td>{{result.result_4}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country8}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country8%}" style="width:32px;height:32px;"> {{result.country8}}</td>
       </tr>
         {%endif%}
+        
         {% if result.match5 != "None"  %}
         <tr>
             <td></td>
@@ -785,9 +809,9 @@
             <td></td>
         </tr>
         <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country9}} </td>
+        <td dir="rtl" lang="ar"> <img src="{%get_flag result.country9%}" style="width:32px;height:32px;"> {{result.country9}} </td>
         <td>{{result.result_5}}</td>
-        <td dir="rtl" lang="ar">    <img src="https://i.imgur.com/rTxWA3o.png" style="width:32px;height:32px;"> {{result.country10}}</td>
+        <td dir="rtl" lang="ar">    <img src="{%get_flag result.country10%}" style="width:32px;height:32px;"> {{result.country10}}</td>
       </tr>
       {% endif  %}
     </tbody>
@@ -813,6 +837,10 @@
   </a>
 </div>
 
+                    
+    <center>              
+<a href="https://skyteam.herokuapp.com/skyfoot/blog/tables/" class="table_link">لرؤية جميع المباريات</a>       
+        </center>  
 <!--  ranking -->
         
                     
@@ -939,7 +967,9 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-    
+    <center>
+    <a href="https://skyteam.herokuapp.com/skyfoot/blog/tables/" class="table_link">لرؤية جميع المجموعات</a>
+    </center>
                     
                     
                     

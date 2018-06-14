@@ -115,7 +115,7 @@ def skyfoot_view_category(request,slug):
     posts2 = skyfoot_post.objects.filter(category = categories,published=True).order_by('-created')
     number = str(Sub.objects.count())
     #return render(request , 'maintenance.html',{'categories':categorys,'posts':posts2})
-    return render(request,'test_temp_con.html')
+    return render(request,'test_temp.html')
 	#return render(request , 'test_temp.html',{'categories':categorys,'posts':posts2})
     
 

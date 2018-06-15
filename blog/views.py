@@ -351,6 +351,6 @@ def showtables(request):
 def tvlive(request):
 	server = servers.objects.filter(published =True)
 
-	return render(request,"ip_tv.html",{
+	return render(request,"Ip_tv.html",{
 		"servers":server,
 		})

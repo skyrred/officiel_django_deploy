@@ -11,6 +11,7 @@ def define(val=None):
 def get_flag(country = None):
 	flag_link = get_object_or_404(flags,country_name = country)
 	#print(vars(flag_link))
+	#print(vars(flag_link))
 	return flag_link.flag_url
 
 @register.simple_tag

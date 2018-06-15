@@ -565,6 +565,7 @@
             <th></th>
         </tr>
       <tr >
+          <th></th>
         <th class="text-center">الدولة</th>
         <th class="text-center">فوز</th>
         <th class="text-center">خسارة</th>
@@ -577,6 +578,7 @@
         {%for team in teams %}
         
       <tr class="text-center">
+          <td><img src="{%get_flag team.country %}" style="width:32px;height:32px;"></td>
         <td>  {{team.country}}  </td>
         <td>  {{team.win}}  </td>
         <td>  {{team.Lose}}  </td>
@@ -602,8 +604,10 @@
     <thead>
         <tr></tr>
       <tr>
+          <th></th>
         <th dir="rtl" lang="ar" class="text-center" >الدولة</th>
         <th dir="rtl" lang="ar" class="text-center">النتيجة</th>
+          <th></th>
         <th dir="rtl" lang="ar" class="text-center" >الدولة</th>
       </tr>
     </thead>
@@ -616,9 +620,11 @@
         {% get_matches date.date as matches %}
         {%for match in matches %}
       <tr class="text-center">
-        <td dir="rtl" lang="ar"> <img src="{%get_flag match.country_1 %}" style="width:32px;height:32px;"> {{match.country_1}}  </td>
+          <td><img src="{%get_flag match.country_1 %}" style="width:32px;height:32px;"></td>
+        <td dir="rtl" lang="ar">  {{match.country_1}}  </td>
         <td>   {{match.result}} </td>
-        <td dir="rtl" lang="ar">    <img src="{%get_flag match.country_2 %}" style="width:32px;height:32px;"> {{match.country_2}} </td>
+          <td><img src="{%get_flag match.country_2 %}" style="width:32px;height:32px;"> </td>
+        <td dir="rtl" lang="ar">    {{match.country_2}} </td>
       </tr>
         {%endfor%}
           </tbody></table>

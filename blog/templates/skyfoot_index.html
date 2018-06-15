@@ -19,12 +19,12 @@
       font: 400 15px/1.8 Lato, sans-serif;
       color: #777;
   }
-  h3, h4 {
+ /* h3, h4 {
       margin: 10px 0 30px 0;
       letter-spacing: 10px;      
       font-size: 20px;
       color: #111;
-  }
+  }*/
   .container {
       padding: 80px 120px;
   }
@@ -96,7 +96,7 @@
   }
   .modal-header, h4, .close {
       background-color: #333;
-      color: #fff !important;
+      color: #fff ;
       text-align: center;
       font-size: 30px;
   }
@@ -572,6 +572,46 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
     <a href="https://paypal.me/Jabnati" class="fa fa-paypal" title="Donate us to continue" style="padding:25px;" data-toggle="tooltip"></a>
   <p>Website Created By <a href="https://skyteam.herokuapp.com" data-toggle="tooltip" title="Visit Skyteam">@Skyteam</a></p> 
 </footer>
+    <!-- Give Away Model -->
+     <!-- Modal -->
+  <div class="modal fade" id="GiveAway" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center" style="color:#db2824;">SkyFoot GiveAway</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+          	<div class="col-sm-12">
+            	<img src="https://i.imgur.com/NqsXIBV.jpg" style="width:100%;height:300px;">
+                </div>
+                <div class="col-sm-12">
+                	<h2 class="text-center" style="color:#333" dir="rtl" lang="ar"> اول مسابقة سحب حصرية لموقع سكاي فوت</h2><br>
+                    <h3 class="text-center" style="color:#333;" dir="rtl" lang="ar">!لا تفوت فرصتك في الفوز بقميص للمنتخب الوطني المغربي المشارك في نهائيات مونديال روسيا </h3>
+                    <h4 class="text-right" style="color:gray;background-color: transparent;" dir="rtl" lang="ar">ملاحظة هامة</h4>
+                    <ul dir="rtl" lang="ar">
+                    	<li><h5 style="color:darkgray;">يجب الاشتراك فيصفحاتنا على مواقع التواصل الاجتماعي و ارسال رسالة لصفحناعلى الفيسبوك بالاضافة الى باقي الشروط الوضوعة في الرابط اسفله من جل دخول السحب</h5></li>
+                        </ul>
+                        <center>
+                    <a href="https://gleam.io/roatg/world-cup-2018-giveaway"> <button class="btn btn-danger" > للاشتراك</button></a></center>
+                    <br>
+                    <br>
+                    
+                    </div>
+          
+        </div>
+        <div class="modal-footer">
+          <p style="color:#db2824;">Powered By SkyTeam </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
 
 <script>
 $(document).ready(function(){
@@ -606,7 +646,7 @@ $(document).ready(function(){
 
     
     $(document).ready(function(){
-            $("#subscribe").modal();
+            $("#GiveAway").modal();
 });
     
     $(window).scroll(function() {

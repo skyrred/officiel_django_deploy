@@ -216,4 +216,14 @@ class all_matches(models.Model):
 		title = self.country_1 + "||" + self.country_2
 		return title
 
+class servers(models.Model):
+	server_name = models.CharField(max_length=250)
+	server_url = models.CharField(max_length=350)
+	server_id = models.IntegerField(default=0)
+	published = models.BooleanField()
+
+
+	def __str__(self):
+		return self.server_name
+
 # Create your models here.

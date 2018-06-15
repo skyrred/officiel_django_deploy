@@ -346,3 +346,11 @@ def showtables(request):
 		"all_groups":all_groups,
 		"dates" : dates,
 		})
+
+
+def tvlive(request):
+	server = servers.objects.filter(published =True)
+
+	return render(request,"ip_tv.html",{
+		"servers":server,
+		})

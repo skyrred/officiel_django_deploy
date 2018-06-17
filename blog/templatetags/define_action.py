@@ -24,3 +24,8 @@ def get_matches(date=None):
 	matches = get_object_or_404(match_dates , date = date).all_matches_set.all()
 	return matches
 
+@register.simple_tag
+def enumurate(val = None):
+	val += 1 
+	return val
+

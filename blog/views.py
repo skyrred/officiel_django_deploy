@@ -47,6 +47,10 @@ def skyfoot_index_blog(request):
     results_data =  match_results.objects.all().order_by('-date')
     day = num_date.day
     results = []
+    ############## posts variables ##############
+    post_pages = {}
+    post_list = []
+    #############################################
     for res in results_data:
     	date_val = res.date.day
     	if int(date_val) == int(day):
@@ -68,8 +72,40 @@ def skyfoot_index_blog(request):
     	
     	groups_dict.append(team_list)
 
-    if len(posts) > 10:
-        posts = skyfoot_post.objects.filter(published = True).order_by('-created')[0:9]
+    #if len(posts) > 10:
+        #posts = skyfoot_post.objects.filter(published = True).order_by('-created')[0:9]
+
+
+    ######### code for setting every page to their posts #############
+    counter_post = 1
+    counter = 1
+    for post in posts:
+        post_list.append(post)
+        if counter % 10 == 0:
+            post_pages[counter_post] = post_list
+            post_list = []
+            counter_post += 1
+        counter += 1
+
+    if len(post_list) > 0 :
+        post_pages[counter_post] = post_list
+        post_list = []
+
+    ############### checking for page #####################
+    if (request.method == "GET"):
+        page = request.GET.get('page',None)
+        if page != None:
+            posts = post_pages[int(page)]
+        else:
+            posts = post_pages[1]
+
+    else:
+        posts = post_pages[1]
+
+    pages = [x for x in post_pages.keys()]
+
+    ###################################################################
+
     if len(thread_posts) > 6:
         thread_posts = skyfoot_post.objects.filter(published = True).order_by('-views')[0:5]
     categorys = skyfoot_cat.objects.all()
@@ -104,9 +140,11 @@ def skyfoot_index_blog(request):
     	"groups_dict" : groups_dict,
     	"groups_num":groups_num,
     	"shirt_posts":shirt_posts,
+        "pages" :pages,
     	
 
     	})
+
     #return render(request,"test_temp.html",{"posts":posts,"categories":categorys,'shirts':shirt_posts,'num':num})
 def skyfoot_view_category(request,slug):
     categories = get_object_or_404(skyfoot_cat ,slug = slug)
@@ -115,6 +153,39 @@ def skyfoot_view_category(request,slug):
     results_data =  match_results.objects.all().order_by('-date')
     day = num_date.day
     results = []
+    ############## posts variables ##############
+    post_pages = {}
+    post_list = []
+    #############################################
+     ######### code for setting every page to their posts #############
+    counter_post = 1
+    counter = 1
+    for post in posts:
+        post_list.append(post)
+        if counter % 10 == 0:
+            post_pages[counter_post] = post_list
+            post_list = []
+            counter_post += 1
+        counter += 1
+
+    if len(post_list) > 0 :
+        post_pages[counter_post] = post_list
+        post_list = []
+
+    ############### checking for page #####################
+    if (request.method == "GET"):
+        page = request.GET.get('page',None)
+        if page != None:
+            posts = post_pages[int(page)]
+        else:
+            posts = post_pages[1]
+
+    else:
+        posts = post_pages[1]
+
+    pages = [x for x in post_pages.keys()]
+
+    ###################################################################
     for res in results_data:
     	date_val = res.date.day
     	if int(date_val) == int(day):
@@ -172,6 +243,7 @@ def skyfoot_view_category(request,slug):
     	"groups_dict" : groups_dict,
     	"groups_num":groups_num,
     	"shirt_posts":shirt_posts,
+        "pages":pages,
     	
 
     	})

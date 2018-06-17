@@ -1186,6 +1186,30 @@
                     
             
                 </div>
+                <div class="page-container">
+                    <h2 class="text-center" style="color:#db2824;">pages</h2>
+                    <center>
+                    <ul class="list-inline">
+                        {% for page in pages  %}
+                        {% if not page > 10 %}
+    <li><a href="\skyfoot\blog\?page={{page}}" >{{page}}</a></li>
+                        {% if page == 10 %}
+                        <li><div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">More
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+                        {%endif%}
+      {%elif page > 10 %}
+    <li><a href="\skyfoot\blog\?page={{page}}">{{page}}</a></li>
+    {%endif%}
+      {%endfor%}
+  </ul>
+</div></li>
+    
+  </ul>
+      </center>          
+                
+                </div>
             </div>
             
         </div>

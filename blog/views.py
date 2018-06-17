@@ -69,9 +69,9 @@ def skyfoot_index_blog(request):
     	groups_dict.append(team_list)
 
     if len(posts) > 10:
-        posts = skyfoot_post.objects.filter(published = True).order_by('-created')[10]
+        posts = skyfoot_post.objects.filter(published = True).order_by('-created')[0:9]
     if len(thread_posts) > 6:
-        thread_posts = skyfoot_post.objects.filter(published = True).order_by('-views')[6]
+        thread_posts = skyfoot_post.objects.filter(published = True).order_by('-views')[0:5]
     categorys = skyfoot_cat.objects.all()
     shirt_posts = shirts.objects.all().order_by('-created')
     shirt_list = []

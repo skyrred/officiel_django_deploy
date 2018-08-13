@@ -5,6 +5,7 @@ from django.core.files import File
 import random
 import datetime
 import requests
+import os
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
 import json
@@ -72,7 +73,7 @@ def send_message(recipient_id, message_text):
     log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
 
     params = {
-        "access_token": "EAADp8CuGpZBEBALjDeDFwxbxUFXTRSMsZBrZCpLZBBo3IlOgwiDE9LtZBYZAtNYYZCTcGT42Q25I3CgwGD3FRCq7e9kyg5XufkviVSJhDlZAGWx6b8qhj18ZCPE8SYEXEu3LytI0Hg4443y2sLc0dReh05fZAUooAUuSdfTni174tVZCqzL8BCP3ySo"
+        "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
     headers = {
         "Content-Type": "application/json"

@@ -38,7 +38,7 @@ def get_message(request):
                             recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                             message_text = messaging_event["message"]["text"]  # the message's text
 
-                            #send_message(sender_id, "roger that!")
+                            send_message(sender_id, "roger that!")
 
                         if messaging_event.get("delivery"):  # delivery confirmation
                             pass
@@ -67,7 +67,28 @@ def get_message(request):
     except Exception as e:
         print(str(e))
 
+def send_message(recipient_id, message_text):
 
+    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
+
+    params = {
+        "access_token": "EAADp8CuGpZBEBALjDeDFwxbxUFXTRSMsZBrZCpLZBBo3IlOgwiDE9LtZBYZAtNYYZCTcGT42Q25I3CgwGD3FRCq7e9kyg5XufkviVSJhDlZAGWx6b8qhj18ZCPE8SYEXEu3LytI0Hg4443y2sLc0dReh05fZAUooAUuSdfTni174tVZCqzL8BCP3ySo"
+    }
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({
+        "recipient": {
+            "id": recipient_id
+        },
+        "message": {
+            "text": message_text
+        }
+    })
+    r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
+    if r.status_code != 200:
+        log(r.status_code)
+        log(r.text)
 
 
 def blog(request):

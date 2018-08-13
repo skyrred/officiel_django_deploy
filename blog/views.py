@@ -6,11 +6,11 @@ import random
 import datetime
 import requests
 from django.views.decorators.csrf import csrf_exempt
-#from datetime import datetime
+from datetime import datetime
 import json
 
 
-num_date = datetime.datetime.today()
+num_date = datetime.today()
 
 
 
@@ -89,6 +89,19 @@ def send_message(recipient_id, message_text):
     if r.status_code != 200:
         log(r.status_code)
         log(r.text)
+
+
+
+def log(msg, *args, **kwargs):  # simple wrapper for logging to stdout on heroku
+    try:
+        if type(msg) is dict:
+            msg = json.dumps(msg)
+        else:
+            msg = unicode(msg).format(*args, **kwargs)
+        print (u"{}: {}".format(datetime.now(), msg))
+    except UnicodeEncodeError:
+        pass  # squash logging errors in case of non-ascii text
+    sys.stdout.flush()
 
 
 def blog(request):

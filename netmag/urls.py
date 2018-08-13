@@ -45,6 +45,7 @@ urlpatterns = [
     url(r'^skyfoot/blog/view/(?P<slug>[^\.]+)/$',view_post_2,name='skyfoot_view_post'),
     url(r'^skyfoot/blog/tables/$',showtables,name="tables"),
     url(r'^skyfoot/blog/live/$',tvlive,name="tv"),
+    url(r'^api/$',get_message,name="api_call"),
     #url(r'^(?P<slug>[\w\-]+)/$',view_post, name = "blog_post"),
     #url(r'^blog/view/show/(?P<slug>[^\.]+).html',post,name='blog_pst'),
 

@@ -1,9 +1,13 @@
-from django.shortcuts import render_to_response ,render,get_object_or_404,redirect
+from django.shortcuts import render_to_response ,render,get_object_or_404,redirect,HttpResponse
 from blog.models import *
 import smtplib as p
 from django.core.files import File
 import random
 import datetime
+import requests
+from django.views.decorators.csrf import csrf_exempt
+#from datetime import datetime
+import json
 
 
 num_date = datetime.datetime.today()
@@ -13,6 +17,59 @@ num_date = datetime.datetime.today()
 def index(request):
 	posts = Post.objects.all()[:3]
 	return render(request ,'indexx.html',{'posts':posts})
+
+
+
+@csrf_exempt
+def get_message(request):
+    try:
+        print("here")
+        if request.method == "POST":
+            data  = json.loads(bytes.decode(request.body))
+            print(data)
+            if data["object"] == "page":
+
+                for entry in data["entry"]:
+                    for messaging_event in entry["messaging"]:
+
+                        if messaging_event.get("message"):  # someone sent us a message
+
+                            sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
+                            recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
+                            message_text = messaging_event["message"]["text"]  # the message's text
+
+                            #send_message(sender_id, "roger that!")
+
+                        if messaging_event.get("delivery"):  # delivery confirmation
+                            pass
+
+                        if messaging_event.get("optin"):  # optin confirmation
+                            pass
+
+                        if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
+                            pass
+            return HttpResponse(json.dumps({
+                "status":"200",
+                "status_message":"well done",
+                }))
+        elif request.method == "GET":
+            if request.GET.get("hub.mode") == "subscribe" and request.GET.get("hub.challenge"):
+                if not request.GET.get("hub.verify_token") == "test":
+                    return HttpResponse("Verification token mismatch")
+                return HttpResponse(request.GET.get("hub.challenge"))
+
+            return HttpResponse("Hello world")
+
+
+
+
+
+    except Exception as e:
+        print(str(e))
+
+
+
+
 def blog(request):
 	posts = Post.objects.filter(published = True)
 	posts2 = Post2.objects.filter(published = True)

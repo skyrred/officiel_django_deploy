@@ -10,7 +10,6 @@ from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
 import json
 import threading
-import discord
 import asyncio
 import random
 

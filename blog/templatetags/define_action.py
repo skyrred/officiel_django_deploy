@@ -7,6 +7,7 @@ register = template.Library()
 def define(val=None):
     return val
 
+
 @register.simple_tag
 def get_flag(country = None):
 	flag_link = get_object_or_404(flags,country_name = country)
@@ -26,6 +27,5 @@ def get_matches(date=None):
 
 @register.simple_tag
 def enumurate(val = None):
-	val += 1 
+	val += 1
 	return val
-

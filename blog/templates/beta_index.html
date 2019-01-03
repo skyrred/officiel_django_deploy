@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome to TheComputerGeeks website,here you will find everything you need.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Kanit:700i|Lato|Montserrat+Alternates" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+    .bg-1{
+      background-color: #212121;
+      color:#fffff;
+    }
+    .main-title{
+      color:lightgray;
+
+    }
+    .main-title:hover{
+      color:orange;
+    }
+    .custom li a{
+      color:#333 !important;
+      font-size: 15px;
+      font-family: 'Lato', sans-serif,bold;
+      font-style: italic;
+    }
+    .custom li a:hover , .custom:hover , .custom li:hover{
+      color:orange !important;
+    }
+    .navbar-brand{
+      font-family: 'Kanit', sans-serif ;
+      font-size: 20px;
+      font-weight:800;
+      color:orange !important;
+
+    }
+    .navbar-brand:hover{
+      color:#db2824 !important;
+    }
+
+    .stroke ul li a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0 10px;
+    }
+    .stroke ul li a,
+    .stroke ul li a:after,
+    .stroke ul li a:before {
+      transition: all .5s;
+    }
+    .stroke ul li a:hover {
+      color: #333;
+    }
+.stroke ul li a{
+  position: relative;
+}
+.stroke ul li a:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: orange;
+  height: 5px;
+}
+.stroke ul li a:hover:after {
+  width: 100%;
+}
+.skill-icon{
+  font-size:100px;
+  color:orange;
+  margin:10px;
+
+}
+.skill-title{
+  color:#db2824;
+  font-size:30px;
+}
+.banner-main{
+  background-image: url("https://i.imgur.com/usz8onD.jpg");
+  background-size:cover;
+  background-size:cover;
+  min-height: 650px;
+  webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+
+}
+.main-title-2{
+  color:white;
+  font-family: 'Kanit', sans-serif ;
+}
+.product img{
+    width:100%;
+    height:200px;
+    cursor: pointer;
+}
+
+
+
+.product:hover > img{
+    filter: opacity(30%);
+}
+.product > center button {
+    filter:opacity(0%);
+    padding: 10px;
+    border:3px solid #921022;
+    background-color: #921022b5;
+    width:45%;
+    position: absolute;
+    top:40%;
+    left:28%;
+    font-size: 15px;
+    color:#e0e0e0;
+}
+.product:hover > center button{
+    filter: opacity(100%);
+    text-decoration: none;
+}
+ .modal-footer  a{
+  padding:12px;
+  background-color:#333;
+  border-radius:8px;
+  color:gray;
+
+
+}
+ .modal-footer  a:hover{
+    background-color:orange;
+    color:white;
+    text-decoration : none;
+}
+.main-icons{
+  font-size:30px;
+  color:#db2824;
+}
+.insta_shot{
+  height:400px;
+  width:100%;
+}
+.nav-custom{
+  padding:15px;
+  border-radius:3px;
+  background-color:orange;
+  font-size: 15px;
+
+
+}
+.nav-custom a{
+  color:white;
+
+}
+.nav-custom span{
+  color:white;
+}
+.nav-custom:hover{
+  background-color:transparent;
+  color:#333;
+}
+.nav-custom:hover > span , .nav-custom:hover > a{
+  color:orange;
+  text-decoration: none;
+
+}
+.logo-small {
+    color: #f4511e;
+    font-size: 50px;
+}
+
+.fab {
+  padding:20px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 80px;
+}
+
+.fab:hover {
+    opacity: 0.7;
+    text-decoration:none;
+    color:white;
+}
+.fa-facebook-f {
+  background: #3B5998;
+  color: lightgrey;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: lightgrey;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: lightgrey;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: lightgrey;
+}
+.footer-brand{
+  color:#db2824;
+}
+.footer-brand:hover{
+  text-decoration: none;
+  color:orange;
+}
+.contact-list li{
+  font-size:20px;
+  padding:4px;
+
+}
+.contact-list li span{
+  font-size:18px;
+  color:orange;
+}
+.skype-button {
+  color:white;
+  padding:10px;
+  background-color:#007bb5;
+  border-radius: 5px;
+  font-size: 25px;
+
+}
+
+.skype-button:hover{
+  background-color: transparent;
+  color:#007bb5;
+}
+
+  </style>
+</head>
+<body>
+  <!-- navigation bar -->
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:white;padding:5px;border:none;">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#">TheComputerGeeks</a>
+</div>
+<div class="collapse navbar-collapse stroke" id="myNavbar">
+<ul class="nav  custom navbar-nav navbar-right">
+<li ><a href="#">BLOG</a></li>
+<li><a href="#">EBOOK</a></li>
+<li><a href="#">PORTFOLIO</a></li>
+<li><a href="#">CONTACT</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+
+
+
+
+  <!-- -->
+  <!-- little banner -->
+    <div class="container-fluid " >
+      <div class="banner-main ">
+        <center>
+            <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-8">
+                  <!--<h1 class="main-title-2"> Welcome to TheComputerGeeks website </h1>-->
+                </div>
+                <div class="col-sm-2">
+                </div>
+            </div>
+
+        </center>
+
+
+
+      </div>
+    <!--  <img class="banner" src="https://i.imgur.com/usz8onD.jpg" alt="TheComputerGeeks website" style="width:100%;max-height:500px;"> -->
+
+    </div>
+
+
+
+  <!-- -->
+  <!-- shop section -->
+  <center>
+  <div id="myCarousel2" class="carousel slide" data-ride="carousel" style="width: 100%;">
+   <h1 class="text-center" style="color:#db2824;"> Check our newest products </h1>
+<!-- Indicators -->
+<ol class="carousel-indicators" >
+{%for x in num%}
+{%if x == 0 %}
+<li data-target="#myCarousel2" data-slide-to="{{x}}" class="active"></li>
+{%else%}
+<li data-target="#myCarousel2" data-slide-to="{{x}}"></li>
+{%endif%}
+{%endfor%}
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+{% load define_action %}
+{% define 0 as iter_num %}
+{%for shirt in shirts%}
+{%if iter_num == 0%}
+<div class="item active">
+<div style="margin:0px 70px 70px 70px;">
+   <div class="row" >
+
+       {% for single_shirt in shirt %}
+
+       <div class="col-sm-4">
+           <div class="product">
+               <img src="{{single_shirt.url}}">
+               <center>
+               <!--<a href="https://www.google.com" data-toggle="modal" data-target="#shirtModal{{single_shirt.num_id}}" >Show More</a>-->
+                   <button type="button" data-toggle="modal" data-target="#shirtModal{{single_shirt.num_id}}">show more</button>
+                   </center>
+
+           </div>
+
+       </div>
+       {% endfor %}
+
+            </div>
+
+
+</div>
+</div>
+{%else%}
+<div class="item">
+<div style="margin:0px 70px 70px 70px;">
+   <div class="row" >
+
+       {% for single_shirt in shirt %}
+
+       <div class="col-sm-4">
+           <div class="product">
+               <img src="{{single_shirt.url}}">
+               <center>
+               <button type="button" data-toggle="modal" data-target="#shirtModal{{single_shirt.num_id}}">show more</button>
+                   </center>
+
+           </div>
+
+       </div>
+       {% endfor %}
+
+            </div>
+
+
+</div>
+</div>
+{%endif%}
+
+{% define 1 as iter_num %}
+
+{%endfor%}
+
+</div>
+
+<!-- Left and right controls -->
+<a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#myCarousel2" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+</center>
+
+
+  <!-- #b1031e;  -->
+  <br>
+  <!-- first section -->
+    <div class="container" style="padding:20px;">
+      <div class="row" style="border-bottom:1px solid black;">
+            <h2 class="text-center" style="color:#b1031e;"> What our website is all about ? </h2>
+            <div class="col-sm-4" >
+              <div>
+              <h3 style="color:#333" class="text-center"> Programming <br> <i  class="fa fa-laptop-code main-icons"></i> </h3>
+              <p class="text-center">
+                  Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte
+              </p>
+
+
+
+            </div>
+          </div>
+          <div class="col-sm-4" >
+            <div>
+            <h3 style="color:#333" class="text-center"> Tech News <br> <i class="far fa-newspaper main-icons"></i> </h3>
+            <p class="text-center">
+                Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte
+            </p>
+            </div>
+          </div>
+            <div class="col-sm-4" >
+              <div>
+              <h3 style="color:#333" class="text-center"> Books,ressources and tutorials <br> <i  class="fas fa-book-open main-icons"></i> </h3>
+              <p class="text-center">
+                  Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte
+              </p>
+              </div>
+            </div>
+
+
+    </div>
+  </div>
+
+  <!-- -->
+
+  <!-- definition section -->
+  <br>
+  <div class="about-me container-fluid" >
+    <!--<h2 class="text-center" style="color:orange;text-decoration:underline;font-weight:800;"> About me </h2>-->
+    <center>
+    <div class="row" style="width:75%;border-bottom:1px solid gray;">
+          <div class="col-sm-6" style="padding:10px;">
+              <!-- img  <h1 class="text-center"> picture </h1>
+                 -->
+                 <img src="https://i.imgur.com/tUMW34S.jpg" alt="TheComputerGeeks website founder/creator" style ="border-radius:5px;width:40%;height:40%">
+          </div>
+          <div class="col-sm-6" style="padding:10px;">
+                <h3 class="text-center" style="margin:7px;weight:800;color:orange;"> Who Am I ? </h3>
+                <center>
+                  <span style="font-size:18px;color:black;"> Welcome to The computer geeks website </span>
+
+                </center>
+                <p class="text-left" style="margin:7px;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                <div>
+                  <h4 style="color:#b1031e;"> Want To Work With me ? </h4>
+                  <br>
+                  <span class="nav-custom"><a href="#" > Visit My PORTFOLIO</a> <span class="glyphicon glyphicon-arrow-right"></span> </span>
+
+                </div>
+
+                <br>
+          </div>
+
+
+    </div>
+
+  </center>
+
+
+  </div>
+
+  <!-- Services section -->
+  <div class="container-fluid text-center">
+
+  <h2>WHY WORKING WITH US ?</h2>
+  <br>
+  <center>
+  <div class="row" style="border-bottom:1px solid #333;width:80%;">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERTIFIED</h4>
+      <p>With over 2 years of experience and certification in the field <br> we may be the best choice for your business</p>
+    </div>
+
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4>HARD WORK</h4>
+      <p>We work hard and try our best to give you the best result <br> and deliver the work as soon as possible</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>LOVE</h4>
+      <p>Our main goal is your satisfaction and we do our work with love so we can gain more friends</p>
+    </div>
+    <br><br>
+    </div>
+  </center>
+
+
+</div>
+
+
+
+
+  <!-- -->
+
+
+  <!-- instagram section -->
+<div class="container-fluid" >
+  <h2 class="text-center" style="color:#b1031e;"> Our Newest Shots </h2>
+  <br>
+  <br>
+
+      <center>
+
+        <div style="width:40%;border-bottom:1px solid #333;">
+          <div id="ourshots" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators" >
+  {%for x in inst_num%}
+  {%if x == 0 %}
+  <li data-target="#ourshots" data-slide-to="{{x}}" class="active"></li>
+  {%else%}
+  <li data-target="#ourshots" data-slide-to="{{x}}"></li>
+  {%endif%}
+  {%endfor%}
+  </ol>
+
+  <!-- Wrapper for slides -->
+  {% load define_action %}
+  {%define 0 as shot_iter %}
+  {%for shot in shots %}
+  {% if shot_iter == 0 %}
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <a href="{{shot.post_url}}"><img src="{{shot.post_pic}}" alt="{{shot.small_caption}}" class="insta_shot" ></a>
+
+      <h4 style="color:#db2824;"> {{shot.small_caption}} </h4>
+    </div>
+{%else%}
+    <div class="item">
+      <a href="{{shot.post_url}}"><img src="{{shot.post_pic}}" alt="{{shot.small_caption}}" class="insta_shot"></a>
+      <h4 style="color:#db2824;"> {{shot.small_caption}} </h4>
+    </div>
+{%endif%}
+{%define 1 as shot_iter %}
+{%endfor%}
+
+
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#ourshots" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#ourshots" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br>
+<br>
+        </div>
+      </center>
+
+<br>
+<br>
+</div>
+<br>
+
+
+  <!-- -->
+
+<!-- shirt modals -->
+{%for shirt in shirt_posts %}
+<!-- order Modal -->
+  <div class="modal fade" id="shirtModal{{shirt.num_id}}" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">x</button>
+          <h4 class="modal-title">{{shirt.title}}</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+          <div class="col-sm-5">
+          	<img src="{{shirt.url}}" style="width:100%;height:250px;">
+          </div>
+          <div class="col-sm-7">
+          	<h4 style="border-bottom:3px solid #333;">
+            	{{shirt.description|safe}}
+            </h4>
+
+          	<div class="orderin">
+            <h4 style="color:#db2824;">{{shirt.price}}$</h4>
+            <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color:#db2824;">order
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Call Us</a></li>
+    <li><a href="#">Order via mail</a></li>
+
+  </ul>
+</div>
+            </div>
+
+          </div>
+
+
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="{{shirt.url_post}}">Check in our shop</a>
+        </div>
+      </div>
+
+      </div></div>
+      {%endfor%}
+<!-- -->
+<!-- Contact Section section -->
+<div class="container-fluid">
+  <h2 style="color:#db2824;" class="text-center"> Contact Us </h2>
+  <center>
+    <div class="row" style="width:90%;">
+        <div class="col-sm-6">
+            <h3 style="color:#db2824;" class="text-center"> Where We are ? </h3>
+            <center>
+                <div class="contact-text">
+                    <ul class="contact-list list-unstyled text-left" style="width:70%">
+                      <li> Country : <span> Morocco </span> </li>
+                      <li> City : <span> Fez </span></li>
+                      <li> Availability : <span> All week days </span></li>
+                      <li> Call Us : <span> +212632598814 or 0632598814 </span></li>
+                      <li> Our Skype : <a href="#" class="fab fa-skype skype-button"></a> </li>
+                    </ul>
+
+                </div>
+            </center>
+        </div>
+        <div class="col-sm-6">
+            <h3 style="color:#db2824;" class="text-center"> Or Send Us An Email </h3>
+            <form action="#" method="post">
+              <div class="contact-header row">
+                <div class="form-group col-sm-6">
+                    <input type="text" placeholder="Name ..." class="form-control">
+
+                </div>
+                <div class="form-group col-sm-6">
+                  <input type="text" placeholder="Email ..." class="form-control">
+                </div>
+              </div>
+              <div class="content">
+                <div class="form-group">
+
+                <textarea class="form-control" placeholder="your message ...">
+
+                </textarea>
+              </div>
+              </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+  </center>
+
+
+</div>
+
+
+<!-- -->
+
+<!-- footer -->
+<div class="container-fluid" style="background-color:#e4dfdf;">
+  <h2 style="color:#b1031e;" class="text-center"> Follow us </h2>
+  <center>
+    <ul class="list-inline">
+        <li><a href="#" class="fab fa-linkedin"></a></li>
+        <li> <a href="#" class="fab fa-youtube"></a> </li>
+        <li><a href="#" class="fab fa-facebook-f"></a></li>
+        <li><a href="#" class="fab fa-instagram"></a></li>
+    </ul>
+    <h4> All rights reserved to <a href="#" class="footer-brand"> @TheComputerGeeks.</a></h4>
+
+  </center>
+
+
+
+</div>
+
+<!-- -->
+
+
+
+
+</body>
+</html>

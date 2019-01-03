@@ -9,6 +9,61 @@ import os
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
 import json
+import threading
+import discord
+import asyncio
+import random
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def token_handler(request):
+    if request.method == "GET":
+        action = request.GET.get("action",None)
+        if action == "add":
+            token = request.GET.get("token",None)
+            instance = tokens.objects.create(token = token)
+            instance.save()
+            print("token saved ")
+            print(token)
+            return HttpResponse(json.dumps({
+                "status":"added"
+                }))
+        else:
+            tokens_list = [x for x in tokens.objects.all()]
+            if len(tokens_list) != 0:
+                index = tokens_list.index(random.choice(tokens_list))
+                token_obj = tokens_list[index]
+                token = token_obj.token
+                token_obj.delete()
+                return HttpResponse(json.dumps({
+                    "status":"success",
+                    "token":token
+                    }))
+            else:
+                return HttpResponse(json.dumps({
+                    "status":"fail",
+                    "reason":"no token available"
+                    }))
+
+
+
+
+
+
+
+def test_function(request):
+	pass
 
 
 num_date = datetime.today()
@@ -18,6 +73,35 @@ num_date = datetime.today()
 def index(request):
 	posts = Post.objects.all()[:3]
 	return render(request ,'indexx.html',{'posts':posts})
+
+
+
+def new_index(request):
+	shirt_posts = shirts.objects.all().order_by('-created')
+	shots = insta_pics.objects.all().order_by("-created")
+	inst_num = [x for x in range(int(len(shots)))]
+	shirt_list = []
+	each_shirt = []
+	for shirt in shirt_posts:
+		each_shirt.append(shirt)
+		if int(shirt.num_id) % 3 == 0:
+			shirt_list.append(each_shirt)
+			each_shirt = []
+	if len(each_shirt) != 0:
+		shirt_list.append(each_shirt)
+		each_shirt = []
+	num = [x for x in range(int(len(shirt_list)))]
+	params = {
+		'shirts':shirt_list,
+    	'num':num,
+		"shirt_posts":shirt_posts,
+		"inst_num":inst_num,
+		"shots":shots
+	}
+	return render(request,'beta_index.html',params)
+
+
+
 
 
 
@@ -151,7 +235,7 @@ def skyfoot_index_blog(request):
     		pass
     print(results)
 
-    
+
     groups = []
     groups.append(group.objects.filter(rank=1))
     groups_dict = []
@@ -161,7 +245,7 @@ def skyfoot_index_blog(request):
     	teams = team.objects.filter(group = each_group).order_by('-Points')
     	for each_team in teams:
     		team_list.append(each_team)
-    	
+
     	groups_dict.append(team_list)
 
     #if len(posts) > 10:
@@ -233,7 +317,7 @@ def skyfoot_index_blog(request):
     	"groups_num":groups_num,
     	"shirt_posts":shirt_posts,
         "pages" :pages,
-    	
+
 
     	})
 
@@ -286,7 +370,7 @@ def skyfoot_view_category(request,slug):
     		pass
     print(results)
 
-    
+
     groups = []
     groups.append(group.objects.filter(rank=1))
     groups_dict = []
@@ -296,7 +380,7 @@ def skyfoot_view_category(request,slug):
     	teams = team.objects.filter(group = each_group).order_by('-Points')
     	for each_team in teams:
     		team_list.append(each_team)
-    	
+
     	groups_dict.append(team_list)
 
     if len(posts) > 10:
@@ -336,10 +420,10 @@ def skyfoot_view_category(request,slug):
     	"groups_num":groups_num,
     	"shirt_posts":shirt_posts,
         "pages":pages,
-    	
+
 
     	})
-    
+
 
 def get_data(post):
     categorys = skyfoot_cat.objects.all()
@@ -363,7 +447,7 @@ def check_comment(request,post):
                 cmnt = request.GET.get('comment',None)
                 c = post.skyfoot_comment_set.create(name=name,email=email,desc=cmnt)
                 c.save()
-    
+
 #post = get_object_or_404(skyfoot_post, slug = slug)
 def view_post_2(request , slug):
     post = get_object_or_404(skyfoot_post,slug=slug)
@@ -371,9 +455,9 @@ def view_post_2(request , slug):
     post.save()
     check_comment(request,post)
     data_dic = get_data(post)
-    
+
     return render_to_response('test_temp_con.html',data_dic)
-    
+
     #categorys = skyfoot_cat.objects.all()
 	#comment = post.comment2_set.all()
     #categorys = skyfoot_cat.objects.all()
@@ -390,7 +474,7 @@ def view_post_2(request , slug):
 def post(request,slug):
 	post = get_object_or_404(Post ,slug=slug)
 	#comment = post.comment1_set.all()
-	
+
 	return render(request,'post.html',{'post':post,'comment':comment})
 def about(request):
 	return render(request,'about.html')
@@ -407,7 +491,7 @@ Subject: BUG repport about (%a)
 <h1> Message :</h1>
 <p>%s</p>
 
-"""	% (name,about,description)	
+"""	% (name,about,description)
 		server = p.SMTP("smtp.gmail.com",587)
 		server.starttls()
 		server.login("teamsky.work@gmail.com","nefdaaxgeddqxxyv")
@@ -416,7 +500,7 @@ Subject: BUG repport about (%a)
         #server.sendmail("skytechno.work@gmail.com","sky.red2212@gmail.com",msg)
 		#server.login("skytechno.work@gmail.com","skytech123")
 		#server.sendmail("skytechno.work@gmail.com","sky.red2212@gmail.com",msg)
-        
+
 		posts = Post.objects.all()
 		return render(request ,'indexx.html',{'posts':posts})
 def send(request):

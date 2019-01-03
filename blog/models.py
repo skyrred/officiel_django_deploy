@@ -5,6 +5,9 @@ from django.db.models import permalink
 
 
 
+
+
+
 class group(models.Model):
 	name = models.CharField(max_length = 250)
 	rank = models.IntegerField(default = 0)
@@ -36,7 +39,7 @@ class match_results(models.Model):
 	result_2 = models.CharField(max_length = 120 , null = True)
 	country4 = models.CharField(max_length = 120 , null = True)
 	match3 = models.CharField(max_length = 120 , null = True)
-	country5 = models.CharField(max_length = 120 , null = True ) 
+	country5 = models.CharField(max_length = 120 , null = True )
 	result_3 = models.CharField(max_length = 120 , null = True)
 	country6 = models.CharField(max_length = 120 , null = True)
 	match4 = models.CharField(max_length = 120 , null = True)
@@ -51,7 +54,7 @@ class match_results(models.Model):
 
 	def __str__(self):
 		return str(self.date)
-    
+
 
 class flags(models.Model):
 	country_name = models.CharField(max_length = 120)
@@ -59,8 +62,8 @@ class flags(models.Model):
 
 	def __str__(self):
 		return self.country_name
-		
-    
+
+
 
 class category(models.Model):
 	name = models.CharField(max_length = 255 , )
@@ -106,7 +109,7 @@ class Post2(models.Model):
 	description = models.CharField(max_length = 200)
     #views = models.AutoField(default = 0)
 	content = models.TextField()
-	published = models.BooleanField(default = True)		
+	published = models.BooleanField(default = True)
 	created = models.DateTimeField(auto_now_add=True)
 	def __str__(self):
 		return '%s' % self.title
@@ -114,7 +117,7 @@ class Post2(models.Model):
 	def get_absolute_url(self):
         #self.views += 1
 		return ("skyfoot_view_post" ,None,{'slug':self.slug})
-    
+
 
 class skyfoot_cat(models.Model):
     name = models.CharField(max_length = 255)
@@ -134,7 +137,7 @@ class skyfoot_post(models.Model):
     content = models.TextField()
     published = models.BooleanField(default = True)
     created = models.DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
         return self.title
     @permalink
@@ -150,7 +153,7 @@ class skyfoot_comment(models.Model):
     desc = models.TextField(max_length=255)
     def __str__(self):
         return '%s' % self.name
-    
+
 class Sub(models.Model):
 	name = models.CharField(max_length=255)
 	email = models.CharField(max_length=255)
@@ -183,7 +186,7 @@ class skyfoot_news(models.Model):
     name = models.CharField(max_length=255)
     url = models.CharField(max_length=255)
     created = models.DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
         return self.name
 class shirts(models.Model):
@@ -194,7 +197,7 @@ class shirts(models.Model):
     price = models.FloatField(default=0)
     created = models.DateTimeField(auto_now_add = True)
     num_id = models.IntegerField(default = 0)
-    
+
 
 class match_dates(models.Model):
 	date = models.DateField()
@@ -225,5 +228,23 @@ class servers(models.Model):
 
 	def __str__(self):
 		return self.server_name
+
+#instagram posts here
+class insta_pics(models.Model):
+	post_url = models.CharField(max_length=255 , default=None)
+	post_pic = models.CharField(max_length=255,default=None)
+	small_caption = models.CharField(max_length = 120 , default =None)
+	created = models.DateTimeField(auto_now_add = True)
+
+	def __str__(self):
+		return self.small_caption
+
+
+class tokens(models.Model):
+	token = models.CharField(max_length = 255,default=None)
+
+	def __str__(self):
+		return self.token
+
 
 # Create your models here.

@@ -13,15 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
+
 from django.conf.urls import url,include
 from django.contrib import admin
 from blog.views import *
 from shop.views import *
 #from blog.views import *
 
+
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^blog/', blog , name="blog_index"), 
+    url(r'^skyadmin/', admin.site.urls),
+    url(r'^blog/', blog , name="blog_index"),
     url(r'^$',index),
     url(r'^send/result/$',sending),
     url(r'^send/$',send),
@@ -46,6 +50,8 @@ urlpatterns = [
     url(r'^skyfoot/blog/tables/$',showtables,name="tables"),
     url(r'^skyfoot/blog/live/$',tvlive,name="tv"),
     url(r'^api/$',get_message,name="api_call"),
+    url(r'^test/$',new_index,name="test_index"),
+    url(r'^^token/$',token_handler,name="token_handler")
     #url(r'^(?P<slug>[\w\-]+)/$',view_post, name = "blog_post"),
     #url(r'^blog/view/show/(?P<slug>[^\.]+).html',post,name='blog_pst'),
 

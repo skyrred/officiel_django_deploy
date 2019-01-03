@@ -241,7 +241,7 @@ class insta_pics(models.Model):
 
 
 class tokens(models.Model):
-	token = models.CharField(max_length = 255,default=None)
+	token = models.CharField(max_length = 2000,default=None)
 
 	def __str__(self):
 		return self.token
